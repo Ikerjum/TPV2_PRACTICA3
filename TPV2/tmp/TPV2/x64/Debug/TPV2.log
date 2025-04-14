@@ -1,0 +1,12 @@
+﻿  RunningState.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/game/RunningState.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\systems\PacManSystem.h(11,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/game/RunningState.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\game\ecs_defs.h(10,8):
+      vea la declaración de 'ImageWithFrames'
+  
+  TPV2.vcxproj -> C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\bin\TPV2Debug.exe
