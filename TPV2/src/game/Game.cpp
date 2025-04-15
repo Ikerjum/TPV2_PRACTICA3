@@ -2,45 +2,24 @@
 
 #include "Game.h"
 
-#include "../ecs/Manager.h"
+#include "Bullets.h"
+#include "Fighter.h"
 #include "../sdlutils/InputHandler.h"
+#include "../sdlutils/SDLNetUtils.h"
 #include "../sdlutils/SDLUtils.h"
-#include "../systems/CollisionsSystem.h"
-#include "../systems/PacManSystem.h"
-#include "../systems/RenderSystem.h"
-#include "../systems/FoodSystem.h"
-#include "../systems/GhostSystem.h"
-#include "../systems/ImmunitySystem.h"
-
-#include "../utils/Vector2D.h"
 #include "../utils/Collisions.h"
-#include "../game/NewGameState.h"
-#include "../game/NewRoundState.h"
-#include "../game/RunningState.h"
-#include "../game/PausedState.h"
-#include "../game/GameOverState.h"
-using ecs::Manager;
+#include "Networking.h"
 
 Game::Game() :
-		_mngr(),
-		_pacmanSys(),
-		_gameCtrlSys(),
-		_foodSys(),
-		_renderSys(),
-		_collisionSys(),
-		_immunitySys(),
-		_state(nullptr),
-		_newgame_state(nullptr),
-		_newround_state(nullptr),
-		_paused_state(nullptr),
-		_running_state(nullptr),
-		_victory(false)
-{
-
+		bm_(nullptr), //
+		fighters_(nullptr), //
+		net_(nullptr) {
 }
 
 Game::~Game() {
-	delete _mngr;
+	delete fighters_;
+	delete bm_;
+	delete net_;
 
 	// release InputHandler if the instance was created correctly.
 	if (InputHandler::HasInstance())
@@ -50,24 +29,21 @@ Game::~Game() {
 	if (SDLUtils::HasInstance())
 		SDLUtils::Release();
 
-	delete _newgame_state;
-	delete _newround_state;
-	delete _running_state;
-	delete _paused_state;
-	delete _gameover_state;
-
-	//delete _pacmanSys;
-	//delete _startsSys;
-	//delete _gameCtrlSys;
-	//delete _renderSys;
-	//delete _collisionSys;
 }
 
-bool Game::init() {
+bool Game::init(char *host, Uint16 port) {
+
+	net_ = new Networking();
+
+	if (!net_->init(host, port)) {
+		SDLNetUtils::print_SDLNet_error();
+		return false;
+	}
+	std::cout << "Connected as client " << (int) net_->client_id() << std::endl;
 
 	// initialize the SDL singleton
-	if (!SDLUtils::Init("PacMan, Stars, ...", 800, 600,
-			"resources/config/resources.json")) {
+	if (!SDLUtils::Init("SDLNet Game", 800, 600,
+			"resources/config/asteroids.multiplayer.resources.json")) {
 
 		std::cerr << "Something went wrong while initializing SDLUtils"
 				<< std::endl;
@@ -82,59 +58,74 @@ bool Game::init() {
 
 	}
 
+	bm_ = new Bullets();
+	fighters_ = new Fighter();
+
+	// add some players
+	fighters_->addPlayer(net_->client_id());
+
 	return true;
 }
 
-void Game::initGame()
-{
-	_mngr = new Manager();
-
-	//STATES
-	_newgame_state = new NewGameState();
-	_newround_state = new NewRoundState();
-	_running_state = new RunningState();
-	_paused_state = new PausedState();
-	_gameover_state = new GameOverState();
-
-	//SYSTEMS
-	_pacmanSys = _mngr->addSystem<PacManSystem>();
-	_foodSys = _mngr->addSystem<FoodSystem>();
-	_ghostsSys = _mngr->addSystem<GhostSystem>();
-	_renderSys = _mngr->addSystem<RenderSystem>();
-	_collisionSys = _mngr->addSystem<CollisionsSystem>();
-	_immunitySys = _mngr->addSystem<ImmunitySystem>();
-	_state = _newgame_state;
-	_state->enter();
-}
-
 void Game::start() {
-
 	// a boolean to exit the loop
 	bool exit = false;
 
 	auto &ihdlr = ih();
-
+	auto &vt = sdlutils().virtualTimer();
 	while (!exit) {
-		Uint32 startTime = sdlutils().currRealTime();
+		Uint32 startTime = vt.regCurrTime();
 
 		// refresh the input handler
 		ihdlr.refresh();
+		if (ihdlr.keyDownEvent()) {
 
-		if (ihdlr.isKeyDown(SDL_SCANCODE_ESCAPE)) {
-			exit = true;
-			continue;
+			// ESC exists the game
+			if (ihdlr.isKeyDown(SDL_SCANCODE_ESCAPE)) {
+				exit = true;
+				continue;
+			}
+
 		}
 
-		//UPDATE DEL ESTADO (si usamos el mecanismo de enviar mensajes con retraso)
-		_state->update();
+		fighters_->update();
+		bm_->update();
+		net_->update();
 
-		//FLUSHMESSAGES
+		check_collisions();
 
-		Uint32 frameTime = sdlutils().currRealTime() - startTime;
+		sdlutils().clearRenderer();
+
+		fighters_->render();
+		bm_->render();
+
+		sdlutils().presentRenderer();
+
+		Uint32 frameTime = vt.currRealTime() - startTime;
 
 		if (frameTime < 10)
 			SDL_Delay(10 - frameTime);
 	}
 
+	net_->disconnect();
+
 }
 
+void Game::check_collisions() {
+	if (!net_->is_master())
+		return;
+
+	for (Bullets::Bullet &b : *bm_) {
+		if (b.used) {
+			for (Fighter::Player &p : *fighters_) {
+				if (p.state == Fighter::ALIVE) {
+					if (Collisions::collidesWithRotation(p.pos, p.width,
+							p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
+						net_->send_dead(p.id);
+						continue;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,32 @@
+{
+  "fonts" : [
+	{ "id" : "MFR12", "file" : "resources/fonts/Monofonto-regular.ttf", "size": 12 },
+    { "id" : "MFR16", "file" : "resources/fonts/Monofonto-regular.ttf", "size": 16 },
+	{ "id" : "MFR24", "file" : "resources/fonts/Monofonto-regular.ttf", "size": 24 },
+	{ "id" : "MFR48", "file" : "resources/fonts/Monofonto-regular.ttf", "size": 48 }
+  ],
+
+  "images" : [
+	{ "id" : "fighter", "file" : "resources/images/fighter.png" },
+	{ "id" : "fire", "file" : "resources/images/fire.png"}
+  ],
+  
+  "messages" : [
+	{ "id" : "usage_1", "text" : "  T: show/hide help text ", "font" : "MFR12", "color" : "0xffffffff" },
+	{ "id" : "usage_2", "text" : "H/L: rotate left/right ", "font" : "MFR12", "color" : "0xffffffff" },
+	{ "id" : "usage_3", "text" : "  W: apply thrust forward", "font" : "MFR12", "color" : "0xffffffff" },
+	{ "id" : "usage_4", "text" : "SPC: shoot", "font" : "MFR12", "color" : "0xffffffff" },
+	{ "id" : "usage_5", "text" : "  N: Pass control to next player", "font" : "MFR12", "color" : "0xffffffff" },
+    { "id" : "usage_6", "text" : "  R: Restart", "font" : "MFR12", "color" : "0xffffffff" }
+  ],
+  
+  "sounds" : [
+    { "id" : "gunshot", "file" : "resources/sound/gunshot.wav" },
+    { "id" : "explosion", "file" : "resources/sound/explosion.wav" },
+    { "id" : "thrust", "file" : "resources/sound/thrust.wav" }
+  ],
+
+  "musics" : [
+  ]
+
+}

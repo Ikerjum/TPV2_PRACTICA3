@@ -1,8 +1,8 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
 
 #pragma once
-#include <iostream>
 #include <cassert>
+#include <iostream>
 
 /*
  * This is an attempt to have a single Singleton class that can be used
@@ -64,11 +64,16 @@ public:
 	template<typename ...Targs>
 	inline static bool Init(Targs &&...args) {
 		assert(!_instance);
-		_instance = new T();
-		if (_instance->init(std::forward<Targs>(args)...)) {
+
+		// The use of an auxiliary variable guarantees that _instance is
+		// nullptr until it is fully initialized. This way we avoid using
+		// the singleton during the initialization process.
+		T *tmp = new T();
+		if (tmp->init(std::forward<Targs>(args)...)) {
+			_instance = tmp;
 			return true; // all OK
 		} else { // Something went wrong
-			delete _instance;
+			delete tmp;
 			return false;
 		}
 	}
@@ -92,5 +97,5 @@ private:
 	static T *_instance;
 };
 
-template<typename T> T *Singleton<T>::_instance;
+template<typename T> T *Singleton<T>::_instance = nullptr;
 
