@@ -1,78 +1,78 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\",
+  "WorkspaceRootPath": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\RunningState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\RunningState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\GhostSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\GhostSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\RenderSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\RenderSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\CollisionsSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\CollisionsSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\PausedState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\PausedState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\GhostSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\GhostSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\GhostSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\GameOverState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\GameOverState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\GhostSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\GhostSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\ecs_defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\ecs_defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\FoodSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\FoodSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\GameOverState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\GameOverState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\RunningState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\RunningState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\RunningState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\resources\\config\\resources.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\config\\resources.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewRoundState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\NewRoundState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewGameState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewGameState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\NewGameState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewGameState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\NewGameState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\PausedState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\PausedState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\resources\\config\\resources.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:resources\\config\\resources.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\CollisionsSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\CollisionsSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\RunningState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\RunningState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\RenderSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\RenderSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\GameOverState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\GameOverState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\ecs_defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\ecs_defs.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\FoodSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\systems\\FoodSystem.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\GameOverState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\GameOverState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewRoundState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\NewRoundState.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewGameState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1382E633-E980-46AE-9FF9-D44E253761C3}|TPV2\\TPV2.vcxproj|solutionrelative:src\\game\\NewGameState.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -86,63 +86,59 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "FoodSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\FoodSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\FoodSystem.cpp",
               "RelativeDocumentMoniker": "src\\systems\\FoodSystem.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\FoodSystem.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\FoodSystem.cpp",
               "RelativeToolTip": "src\\systems\\FoodSystem.cpp",
               "ViewState": "AgIAADUAAAAAAAAAAAAuwBkAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-11T20:27:42.47Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ecs_defs.h",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\ecs_defs.h",
-              "RelativeDocumentMoniker": "src\\game\\ecs_defs.h",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\ecs_defs.h",
-              "RelativeToolTip": "src\\game\\ecs_defs.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-11T20:27:24.843Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T20:27:42.47Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "ecs_defs.h",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\ecs_defs.h",
+              "RelativeDocumentMoniker": "src\\game\\ecs_defs.h",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\ecs_defs.h",
+              "RelativeToolTip": "src\\game\\ecs_defs.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-11T20:27:24.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Game.h",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\Game.h",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\Game.h",
               "RelativeDocumentMoniker": "src\\game\\Game.h",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\Game.h",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\Game.h",
               "RelativeToolTip": "src\\game\\Game.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-29T17:39:32.619Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T17:39:32.619Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "GameOverState.h",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\GameOverState.h",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\GameOverState.h",
               "RelativeDocumentMoniker": "src\\game\\GameOverState.h",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\GameOverState.h",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\GameOverState.h",
               "RelativeToolTip": "src\\game\\GameOverState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAA6wAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-29T17:59:06.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T17:59:06.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "NewGameState.h",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewGameState.h",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewGameState.h",
               "RelativeDocumentMoniker": "src\\game\\NewGameState.h",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewGameState.h",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewGameState.h",
               "RelativeToolTip": "src\\game\\NewGameState.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
@@ -150,13 +146,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "GhostSystem.h",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\GhostSystem.h",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\GhostSystem.h",
               "RelativeDocumentMoniker": "src\\systems\\GhostSystem.h",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\GhostSystem.h",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\GhostSystem.h",
               "RelativeToolTip": "src\\systems\\GhostSystem.h",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBoAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-11T20:24:21.404Z",
               "EditorCaption": ""
@@ -165,66 +161,64 @@
         },
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "RenderSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\RenderSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\RenderSystem.cpp",
               "RelativeDocumentMoniker": "src\\systems\\RenderSystem.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\RenderSystem.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\RenderSystem.cpp",
               "RelativeToolTip": "src\\systems\\RenderSystem.cpp",
               "ViewState": "AgIAADoAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-11T20:46:17.02Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T20:46:17.02Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "CollisionsSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\CollisionsSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\CollisionsSystem.cpp",
               "RelativeDocumentMoniker": "src\\systems\\CollisionsSystem.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\CollisionsSystem.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\CollisionsSystem.cpp",
               "RelativeToolTip": "src\\systems\\CollisionsSystem.cpp",
               "ViewState": "AgIAACkAAAAAAAAAAAAIwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-11T20:41:59.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T20:41:59.766Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "GhostSystem.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\GhostSystem.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\GhostSystem.cpp",
               "RelativeDocumentMoniker": "src\\systems\\GhostSystem.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\systems\\GhostSystem.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\systems\\GhostSystem.cpp",
               "RelativeToolTip": "src\\systems\\GhostSystem.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA6wB8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-11T20:24:02.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "RunningState.h",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\RunningState.h",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\RunningState.h",
               "RelativeDocumentMoniker": "src\\game\\RunningState.h",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\RunningState.h",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\RunningState.h",
               "RelativeToolTip": "src\\game\\RunningState.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA6wAoAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-29T19:49:47.281Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\main.cpp",
               "RelativeDocumentMoniker": "src\\main.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\main.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\main.cpp",
               "RelativeToolTip": "src\\main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -232,11 +226,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Game.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\Game.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\Game.cpp",
               "RelativeDocumentMoniker": "src\\game\\Game.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\Game.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\Game.cpp",
               "RelativeToolTip": "src\\game\\Game.cpp",
               "ViewState": "AgIAAF8AAAAAAAAAAAAqwAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -244,50 +238,47 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "GameOverState.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\GameOverState.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\GameOverState.cpp",
               "RelativeDocumentMoniker": "src\\game\\GameOverState.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\GameOverState.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\GameOverState.cpp",
               "RelativeToolTip": "src\\game\\GameOverState.cpp",
               "ViewState": "AgIAAAQAAAAAAAAAAAAgwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-29T17:58:49.116Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T17:58:49.116Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "RunningState.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\RunningState.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\RunningState.cpp",
               "RelativeDocumentMoniker": "src\\game\\RunningState.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\RunningState.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\RunningState.cpp",
               "RelativeToolTip": "src\\game\\RunningState.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAADwvyUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAUwCUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-29T17:58:21.646Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-29T17:58:21.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PausedState.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\PausedState.cpp",
+              "RelativeDocumentMoniker": "src\\game\\PausedState.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\PausedState.cpp",
+              "RelativeToolTip": "src\\game\\PausedState.cpp",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T17:58:16.763Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "PausedState.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\PausedState.cpp",
-              "RelativeDocumentMoniker": "src\\game\\PausedState.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\PausedState.cpp",
-              "RelativeToolTip": "src\\game\\PausedState.cpp",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-29T17:58:16.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
               "Title": "NewGameState.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewGameState.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewGameState.cpp",
               "RelativeDocumentMoniker": "src\\game\\NewGameState.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewGameState.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewGameState.cpp",
               "RelativeToolTip": "src\\game\\NewGameState.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
@@ -295,23 +286,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 3,
               "Title": "resources.json",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\resources\\config\\resources.json",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\resources\\config\\resources.json",
               "RelativeDocumentMoniker": "resources\\config\\resources.json",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\resources\\config\\resources.json",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\resources\\config\\resources.json",
               "RelativeToolTip": "resources\\config\\resources.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-03-29T17:52:43.447Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "NewRoundState.cpp",
-              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewRoundState.cpp",
+              "DocumentMoniker": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewRoundState.cpp",
               "RelativeDocumentMoniker": "src\\game\\NewRoundState.cpp",
-              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA2\\TPV2\\src\\game\\NewRoundState.cpp",
+              "ToolTip": "C:\\Users\\Hector\\Documents\\GitHub\\TPV2_PRACTICA3\\TPV2\\src\\game\\NewRoundState.cpp",
               "RelativeToolTip": "src\\game\\NewRoundState.cpp",
               "ViewState": "AgIAAAoAAAAAAAAAAAA0wC8AAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",

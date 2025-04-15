@@ -1,12 +1,295 @@
-﻿  RunningState.cpp
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "../src/game/RunningState.cpp")
-      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\components\Health.h(4,7):
+﻿  Health.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/components/Health.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
       vea la declaración de 'Health'
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\systems\PacManSystem.h(11,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-  (compilando archivo de origen "../src/game/RunningState.cpp")
-      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\src\game\ecs_defs.h(10,8):
+  ImageWithFrames.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(4,7): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/components/ImageWithFrames.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\ecs_defs.h(7,8):
+      vea la declaración de 'Transform'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/components/ImageWithFrames.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7):
       vea la declaración de 'ImageWithFrames'
   
-  TPV2.vcxproj -> C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA2\TPV2\bin\TPV2Debug.exe
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.cpp(18,28): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.cpp(19,30): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/components/ImageWithFrames.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.cpp(37,14):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::getComponent<Transform>(ecs::entity_t)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(132,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<Transform>' que se está compilando
+  
+  MiracleFruit.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\MiracleFruit.h(8,7): warning C4099: 'MiracleFruit': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/components/MiracleFruit.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\MiracleFruit.h(8,7):
+      vea la declaración de 'MiracleFruit'
+  
+  Manager.cpp
+  Game.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\PacManSystem.h(11,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/game/Game.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\ecs_defs.h(10,8):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/game/Game.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(87,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::sysId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Game.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(87,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(100,22):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::addSystem<PacManSystem,>(void)" que se está compilando
+          with
+          [
+              T=PacManSystem
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(184,27):
+          vea la referencia a la plantilla de variables 'const ecs::sysId_t sysId<PacManSystem>' que se está compilando
+  
+  GameOverState.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\GameOverState.cpp(46,52): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\GameOverState.cpp(50,52): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+  NewGameState.cpp
+  NewRoundState.cpp
+  PausedState.cpp
+  RunningState.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/game/RunningState.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\PacManSystem.h(11,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/game/RunningState.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\ecs_defs.h(10,8):
+      vea la declaración de 'ImageWithFrames'
+  
+  JSON.cpp
+  JSONValue.cpp
+  main.cpp
+  SDLNetUtils.cpp
+  SDLUtils.cpp
+  SDLUtilsError.cpp
+  sdlutils_demo.cpp
+  SoundEffect.cpp
+  Texture.cpp
+  CollisionsSystem.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/CollisionsSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/CollisionsSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\CollisionsSystem.cpp(28,20):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::getComponent<Transform>(ecs::entity_t)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(132,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<Transform>' que se está compilando
+  
+  Generando código...
+  Compilando...
+  FoodSystem.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\MiracleFruit.h(8,7): warning C4099: 'MiracleFruit': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/FoodSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\MiracleFruit.h(8,7):
+      vea la declaración de 'MiracleFruit'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(4,7): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/FoodSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Transform.h(8,8):
+      vea la declaración de 'Transform'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/FoodSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(43,33): warning C4244: 'argumento': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(47,56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(81,53): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(81,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(81,34): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(81,31): warning C4244: 'argumento': conversión de 'unsigned int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(90,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(91,56): warning C4244: 'argumento': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(147,29): warning C4244: 'argumento': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/FoodSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(28,20):
+          Vea la referencia a la creación de una instancia de la función plantilla "bool ecs::Manager::hasComponent<MiracleFruit>(ecs::entity_t)" que se está compilando
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(144,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<MiracleFruit>' que se está compilando
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(96,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/FoodSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(96,40):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\FoodSystem.cpp(84,20):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::addComponent<ImageWithFrames,Texture*,int&,int&,int,int,int>(ecs::entity_t,Texture *&&,int &,int &,int &&,int &&,int &&)" que se está compilando
+          with
+          [
+              T=ImageWithFrames
+          ]
+  
+  GhostSystem.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(4,7): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/GhostSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Transform.h(8,8):
+      vea la declaración de 'Transform'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/GhostSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\GhostSystem.cpp(77,57): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\GhostSystem.cpp(92,52): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/GhostSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\GhostSystem.cpp(36,22):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::getComponent<Transform>(ecs::entity_t)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(132,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<Transform>' que se está compilando
+  
+  ImmunitySystem.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/ImmunitySystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(4,7): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/ImmunitySystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\ecs_defs.h(7,8):
+      vea la declaración de 'Transform'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/ImmunitySystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/ImmunitySystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\ImmunitySystem.cpp(21,26):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::getComponent<Health>(ecs::entity_t)" que se está compilando
+          with
+          [
+              T=Health
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(132,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<Health>' que se está compilando
+  
+  PacManSystem.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\PacManSystem.h(11,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/PacManSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\ecs_defs.h(10,8):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(4,7): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/PacManSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Transform.h(8,8):
+      vea la declaración de 'Transform'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/PacManSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/PacManSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\PacManSystem.cpp(86,46): warning C4244: '=': conversión de 'Uint32' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/PacManSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\PacManSystem.cpp(29,17):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::addComponent<Transform,>(ecs::entity_t)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(87,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<Transform>' que se está compilando
+  
+  RenderSystem.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(4,7): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/RenderSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\ecs_defs.h(7,8):
+      vea la declaración de 'Transform'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7): warning C4099: 'ImageWithFrames': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/RenderSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\ImageWithFrames.h(8,7):
+      vea la declaración de 'ImageWithFrames'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7): warning C4099: 'Health': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+  (compilando archivo de origen "../src/systems/RenderSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\components\Health.h(4,7):
+      vea la declaración de 'Health'
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\RenderSystem.cpp(77,19): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\RenderSystem.cpp(76,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\RenderSystem.cpp(96,36): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::cmpId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/RenderSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(83,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\RenderSystem.cpp(37,20):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::getComponent<Transform>(ecs::entity_t)" que se está compilando
+          with
+          [
+              T=Transform
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(132,27):
+          vea la referencia a la plantilla de variables 'const ecs::cmpId_t cmpId<Transform>' que se está compilando
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(87,56): warning C4267: 'inicializando': conversión de 'size_t' a 'const ecs::sysId_t'; posible pérdida de datos
+  (compilando archivo de origen "../src/systems/RenderSystem.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\ecs.h(87,56):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\systems\RenderSystem.cpp(68,22):
+          Vea la referencia a la creación de una instancia de la función plantilla "T *ecs::Manager::getSystem<PacManSystem>(void)" que se está compilando
+          with
+          [
+              T=PacManSystem
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\ecs\Manager.h(227,27):
+          vea la referencia a la plantilla de variables 'const ecs::sysId_t sysId<PacManSystem>' que se está compilando
+  
+  Collisions.cpp
+  Vector2D.cpp
+  Generando código...
+  LINK : no se encontró C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\\bin\TPV2Debug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
+  TPV2.vcxproj -> C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\bin\TPV2Debug.exe
