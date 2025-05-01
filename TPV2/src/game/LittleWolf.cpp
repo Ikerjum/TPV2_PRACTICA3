@@ -55,9 +55,9 @@ void LittleWolf::update() {
 		}
 
 		// N switches to the next player view
-		if (ihdlr.isKeyDown(SDL_SCANCODE_N)) {
-			switchToNextPlayer();
-		}
+		//if (ihdlr.isKeyDown(SDL_SCANCODE_N)) {
+		//	switchToNextPlayer();
+		//}
 
 		// R brings deads to life
 		if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
@@ -67,9 +67,6 @@ void LittleWolf::update() {
 
 	Player &p = _players[_curr_player_id];
 
-	Game::Instance()->get_networking().send_state(p.where.x, p.where.y, p.velocity.x, p.velocity.y, p.speed, p.acceleration,
-		p.theta);
-
 	// dead player don't move/spin/shoot
 	if (p.state != ALIVE)
 		return;
@@ -78,6 +75,8 @@ void LittleWolf::update() {
 	move(p);  // handle moving
 	shoot(p); // handle shooting
 
+	Game::Instance()->get_networking().send_state(p.where.x, p.where.y, p.velocity.x, p.velocity.y, p.speed, p.acceleration,
+		p.theta);
 }
 
 void LittleWolf::load(std::string filename) {
@@ -235,6 +234,8 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 
 	auto &rand = sdlutils().rand();
 
+	_players[id].state = ALIVE;
+
 	// The search for an empty cell start at a random position (orow,ocol)
 	uint16_t orow = rand.nextInt(0, _map.walling_height);
 	uint16_t ocol = rand.nextInt(0, _map.walling_width);
@@ -268,6 +269,7 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 	// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
 	_map.walling[(int) p.where.y][(int) p.where.x] = player_to_tile(id);
 	_players[id] = p;
+	_players[id].state = ALIVE;
 	
 	_curr_player_id = id;
 	send_my_info();
@@ -290,7 +292,6 @@ void LittleWolf::killPlayer(std::uint8_t id)
 void LittleWolf::removePlayer(std::uint16_t id)
 {
 	_players[id].state = NOT_USED;
-	std::cout << "ME REMUEVO" << std::endl;
 	_map.walling[(int)_players[id].where.y][(int)_players[id].where.x] = 0;
 	send_my_info();
 }

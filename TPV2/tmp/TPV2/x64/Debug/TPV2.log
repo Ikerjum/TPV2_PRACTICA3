@@ -1,45 +1,44 @@
-﻿  LittleWolf.cpp
+﻿  Networking.cpp
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(275,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(275,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
+  
 C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(276,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+  (compilando archivo de origen "../src/game/Networking.cpp")
   
 C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(276,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+  (compilando archivo de origen "../src/game/Networking.cpp")
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(277,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(302,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(277,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(302,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(303,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(310,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(303,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(310,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(311,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(98,11): warning C4101: 'm3': variable local sin referencia
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(51,15):
+          Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<Msg>(T &,UDPpacket *,UDPsocket,const IPaddress &)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(589,10):
+          Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<T>(T &,UDPpacket *,UDPsocket)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
   
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(311,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(132,26): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(134,41): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(151,61): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(169,18): warning C4554: "|": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(391,35): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(391,21): warning C4244: 'inicializando': conversión de 'double' a 'const float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(393,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(393,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(394,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(394,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(508,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(508,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(511,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(511,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(537,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(537,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(537,37): warning C4244: 'argumento': conversión de 'uint_fast16_t' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(625,16): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(625,41): warning C4305: '+=': truncamiento de 'double' a 'float'
   TPV2.vcxproj -> C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\bin\TPV2Debug.exe

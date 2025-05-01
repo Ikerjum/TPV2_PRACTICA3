@@ -143,7 +143,6 @@ public:
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta);
 	void bringAllToLife(); //deberia ser privado
-	Player* getPlayers() { return _players; }
 
 	// initialize the SDL window information
 	void init(SDL_Window *window, SDL_Renderer *render);
