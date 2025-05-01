@@ -290,6 +290,7 @@ void LittleWolf::killPlayer(std::uint8_t id)
 void LittleWolf::removePlayer(std::uint16_t id)
 {
 	_players[id].state = NOT_USED;
+	std::cout << "ME REMUEVO" << std::endl;
 	_map.walling[(int)_players[id].where.y][(int)_players[id].where.x] = 0;
 	send_my_info();
 }

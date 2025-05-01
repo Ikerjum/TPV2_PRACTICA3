@@ -31,13 +31,15 @@ Game::~Game() {
 bool Game::initGame(const char *map, char* host, Uint16 port) {
 
 
-	_little_wolf = new LittleWolf();
+	
 	_net = new Networking();
 
 	if (!_net->init(host, port)) {
 		SDLNetUtils::print_SDLNet_error();
 		return false;
 	}
+
+	_little_wolf = new LittleWolf();
 
 	// load a map
 	_little_wolf->load(map);
