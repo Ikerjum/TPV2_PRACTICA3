@@ -28,9 +28,9 @@ public:
 	void send_my_info(const Vector2D &pos, float w, float h, float rot,
 			Uint8 state);
 	
-	void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
-	void send_dead(Uint8 id);
-	void send_restart();
+	//void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
+	//void send_dead(Uint8 id);
+	//void send_restart();
 
 private:
 
