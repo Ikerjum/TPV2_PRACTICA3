@@ -1,4 +1,5 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
+
 #include <iostream>
 #include <fstream>
 
@@ -12,11 +13,12 @@ void server(Uint16 port) {
 }
 
 void client(char *host, Uint16 port) {
-	if (Game::Init(host, port)) {
-		Game::Instance()->start();
+	if (Game::Init()) {
+		if (Game::Instance()->initGame(host, port)) {
+			Game::Instance()->start();
+		}
+		Game::Release();
 	}
-
-	Game::Release();
 }
 
 void start(int argc, char **argv) {

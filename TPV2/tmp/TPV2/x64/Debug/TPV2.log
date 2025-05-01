@@ -1,87 +1,103 @@
 ﻿  Bullets.cpp
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(51,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(51,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(41,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(51,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Bullets.cpp(51,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Fighter.cpp
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(43,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(43,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(70,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(72,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(76,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(78,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(81,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(81,56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(103,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(103,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(153,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(152,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(152,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(152,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(155,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(154,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(154,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(154,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(157,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(156,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(156,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(156,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(159,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(158,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(158,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(158,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(172,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(172,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(172,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(172,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(206,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(206,32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(228,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(229,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(244,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(245,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(253,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(253,58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(44,47): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(44,44): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(71,34): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(73,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(77,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(79,23): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(82,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(82,56): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(104,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(104,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(154,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(153,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(153,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(153,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(156,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(155,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(155,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(155,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(158,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(157,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(157,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(157,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(160,14): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(159,71): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(159,56): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(159,41): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(173,64): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(173,48): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(173,34): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(173,31): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(207,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(207,32): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(229,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(230,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(245,12): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(246,13): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(254,67): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Fighter.cpp(254,58): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Game.cpp
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(123,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(123,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(123,9): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(122,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(127,42): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(127,33): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(127,9): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Game.cpp(126,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Networking.cpp
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(162,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(163,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(172,16): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(172,11): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(215,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(216,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(225,16): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(225,11): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(589,10): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<T>(T &,UDPpacket *,UDPsocket)" que se está compilando
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(162,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(163,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(172,16): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(172,11): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(215,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(216,8): warning C4244: '=': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(225,16): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(225,11): warning C4244: 'argumento': conversión de 'const int' a 'float'; posible pérdida de datos
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/Networking.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(51,15):
+          Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<Msg>(T &,UDPpacket *,UDPsocket,const IPaddress &)" que se está compilando
           with
           [
               T=Msg
           ]
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(51,15): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<Msg>(T &,UDPpacket *,UDPsocket,const IPaddress &)" que se está compilando
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(589,10):
+          Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<T>(T &,UDPpacket *,UDPsocket)" que se está compilando
           with
           [
               T=Msg
           ]
+  
   UDPServer.cpp
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServer.cpp(101,21): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<MsgWithMasterId>(T &,UDPpacket *,UDPsocket)" que se está compilando
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/UDPServer.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\UDPServer.cpp(101,21):
+          Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<MsgWithMasterId>(T &,UDPpacket *,UDPsocket)" que se está compilando
           with
           [
               T=MsgWithMasterId
           ]
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServer.h(17,17): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
-C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServer.cpp(105,8): message : Vea la referencia a la creación de una instancia de la función plantilla "void UDPServer::send_to_all_except<MsgWithMasterId>(T &,int)" que se está compilando
+  
+C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\UDPServer.h(17,17): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+  (compilando archivo de origen "../src/game/UDPServer.cpp")
+      C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\UDPServer.h(17,17):
+      el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+          C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\UDPServer.cpp(105,8):
+          Vea la referencia a la creación de una instancia de la función plantilla "void UDPServer::send_to_all_except<MsgWithMasterId>(T &,int)" que se está compilando
           with
           [
               T=MsgWithMasterId
           ]
+  
   JSON.cpp
   JSONValue.cpp
   json_demo.cpp
@@ -95,4 +111,4 @@ C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServe
   Collisions.cpp
   Vector2D.cpp
   Generando código...
-  TPV2.vcxproj -> C:\Users\ikerm\Desktop\APUNTES AÑO 2\TPV2\TPV2_PRACTICA3\TPV2\bin\TPV2Debug.exe
+  TPV2.vcxproj -> C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\bin\TPV2Debug.exe

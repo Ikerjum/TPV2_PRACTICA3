@@ -1,7 +1,7 @@
 :: cambiar a la carpeta donde está la carpeta resources
 
 c:
-cd c:\hlocal\TPV2
+cd C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2
  
 :: ejecutar un cliente
 

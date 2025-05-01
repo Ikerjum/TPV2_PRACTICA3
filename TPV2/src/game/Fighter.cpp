@@ -20,7 +20,8 @@ Fighter::Fighter() :
 		_curr_player_id(0), //
 		_fighter_img(sdlutils().images().at("fighter")), //
 		_ihdlr(ih()), //
-		_show_help(true) {
+		_show_help(true), //
+                _players() {
 }
 
 Fighter::~Fighter() {

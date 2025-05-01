@@ -31,7 +31,11 @@ Game::~Game() {
 
 }
 
-bool Game::init(char *host, Uint16 port) {
+bool Game::init() {
+	return true;
+}
+
+bool Game::initGame(char *host, Uint16 port) {
 
 	net_ = new Networking();
 
