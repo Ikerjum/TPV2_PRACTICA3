@@ -77,6 +77,7 @@ void LittleWolf::update() {
 
 	Game::Instance()->get_networking().send_state(p.where.x, p.where.y, p.velocity.x, p.velocity.y, p.speed, p.acceleration,
 		p.theta);
+
 }
 
 void LittleWolf::load(std::string filename) {
@@ -298,11 +299,12 @@ void LittleWolf::removePlayer(std::uint16_t id)
 
 void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, std::uint8_t state)
 {
+
 	Player& p = _players[id];
 
 	p.id = id;
-	p.where.y = whereX;
-	p.where.x = whereY;
+	p.where.x = whereX;
+	p.where.y = whereY;
 	p.velocity.x = velocityX;
 	p.velocity.y = velocityY;
 	p.speed = speed;
@@ -311,6 +313,7 @@ void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY,
 	p.state = static_cast<PlayerState>(state);
 
 	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
+
 }
 
 void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta)

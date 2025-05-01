@@ -101,6 +101,7 @@ void Game::start() {
 
 		_little_wolf->update();
 		_net->update();
+		
 
 		check_collisions();
 

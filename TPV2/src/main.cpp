@@ -15,6 +15,7 @@ void server(Uint16 port) {
 void client(char* host, Uint16 port) {
 	if (Game::Init()) {
 		if (Game::Instance()->initGame("resources/maps/little_wolf/map_0.json",host,port)) {
+			std::cout << "EMPEZANDO EL JUEGO" << std::endl;
 			Game::Instance()->start();
 		}
 		Game::Release();

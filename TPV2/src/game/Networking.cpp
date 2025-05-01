@@ -92,6 +92,7 @@ bool Networking::disconnect() {
 }
 
 void Networking::update() {
+
 	Msg m0;
 	MsgWithMasterId m1;
 	PlayerStateMsg m2;
@@ -100,6 +101,14 @@ void Networking::update() {
 	PlayerInfoMsg m5;
 
 	while (SDLNetUtils::deserializedReceive(m0, _p, _sock) > 0) {
+		//SE EJECUTA SOLO UNA VEZ
+		//std::cout << "ACTUALIZANDO DESERIALIZED" << SDLNetUtils::deserializedReceive(m0, _p, _sock) << std::endl;
+
+		//NO HAY PROBLEMAS DE TAMAÑO
+		if (_p->len < sizeof(Msg)) {
+			std::cerr << "Paquete recibido demasiado pequeño: " << _p->len << " bytes" << std::endl;
+			continue;
+		}
 
 		switch (m0._type) {
 		case _NEW_CLIENT_CONNECTED:
@@ -113,12 +122,18 @@ void Networking::update() {
 			_masterId = m1._master_id;
 			handle_disconnet(m1._client_id);
 			break;
-
+		//EL ERROR PERSISTE SI COMENTO TODO ESTE CASO
 		case _PLAYER_STATE:
 			m2.deserialize(_p->data);
+			//LLEGA A EJECUTARSE SOLO UNA VEZ
+			//std::cout << "Datos deserializados: whereX=" << m2.whereX
+			//	<< " whereY=" << m2.whereY << " velocityX=" << m2.velocityX
+			//	<< " velocityY=" << m2.velocityY << " speed=" << m2.speed
+			//	<< " acceleration=" << m2.acceleration << " theta="
+			//	<< m2.theta << std::endl;
 			handle_player_state(m2);
 			break;
-
+		//SI COMENTO ESTE CASO EL ERROR DESAPARECE
 		case _PLAYER_INFO:
 			m5.deserialize(_p->data);
 			handle_player_info(m5);
@@ -145,8 +160,11 @@ void Networking::update() {
 }
 
 void Networking::handle_new_client(Uint8 id) {
+	//NO LLEGA A EJECUTARSE NUNCA
+	//std::cout << "Nuevo cliente conectado: " << (int)id << std::endl;
 	if (id != _clientId)
 		Game::Instance()->get_littleWolf().send_my_info();
+	//std::cout << "NUEVO CLIENTE CONECTADISIMO" << std::endl;
 }
 
 void Networking::handle_disconnet(Uint8 id) {
@@ -171,10 +189,14 @@ void Networking::send_state(float whereX, float whereY, float velocityX, float v
 }
 
 void Networking::handle_player_state(const PlayerStateMsg &m) {
+	//LLEGA A EJECUTARSE SOLO UNA VEZ
+	std::cout << "PROCESANDO ESTADO DEL JUGADOR CON ID: " << (int)m._client_id << std::endl;
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_state(m._client_id, m.whereX, m.whereY,
 			m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta);
 	}
+	//LLEGA A EJECUTARSE SOLO UNA VEZ
+	std::cout << "ESTADO DEL JUGADOR PROCESADO" << std::endl;
 }
 
 //void Networking::send_shoot(Vector2D p, Vector2D v, int width, int height,
