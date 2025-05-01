@@ -6,6 +6,7 @@
 
 #include "netwrok_messages.h"
 class Vector2D;
+class Littlewolf;
 
 class Networking {
 public:
@@ -24,13 +25,29 @@ public:
 		return _clientId == _masterId;
 	}
 
-	void send_state(const Vector2D &pos, float w, float h, float rot);
-	void send_my_info(const Vector2D &pos, float w, float h, float rot,
-			Uint8 state);
+	//void send_state(const Vector2D &pos, float w, float h, float rot);
+	//void send_my_info(const Vector2D &pos, float w, float h, float rot,
+	//		Uint8 state);
+
+	void send_state(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
+		float theta);
+	void send_my_info(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
+		float theta, uint8_t state);
+
+	//struct Player {
+	//	uint8_t id;          // the id
+	//	Line fov;            // focal view
+	//	Point where;         // current position (wrt. to the grid)
+	//	Point velocity;      // current velocity
+	//	float speed;         // maximum speed
+	//	float acceleration;  // acceleration
+	//	float theta;         // rotation (in rad)
+	//	PlayerState state;   // the state
+	//};
 	
 	//void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
-	//void send_dead(Uint8 id);
-	//void send_restart();
+	void send_dead(Uint8 id);
+	void send_restart();
 
 private:
 
@@ -38,7 +55,7 @@ private:
 	void handle_disconnet(Uint8 id);
 	void handle_player_state(const PlayerStateMsg &m);
 	void handle_player_info(const PlayerInfoMsg &m);
-	void handle_shoot(const ShootMsg &m);
+	//void handle_shoot(const ShootMsg &m);
 	void handle_dead(const MsgWithId &m);
 	void handle_restart();
 

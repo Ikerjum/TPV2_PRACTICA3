@@ -39,26 +39,44 @@ struct MsgWithMasterId: MsgWithId {
 
 struct PlayerStateMsg: MsgWithId {
 
-	float x;
-	float y;
-	int w;
-	int h;
-	float rot;
+	//float x;
+	//float y;
+	//int w;
+	//int h;
+	//float rot;
 
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot)
+	float whereX;
+	float whereY;
+	float velocityX;
+	float velocityY;
+	float speed;
+	float acceleration;
+	float theta;
 
+	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, whereX, whereY, velocityX, velocityY, speed, acceleration, theta)
 };
 
 struct PlayerInfoMsg: MsgWithId {
 
-	float x;
-	float y;
-	int w;
-	int h;
-	float rot;
-	Uint8 state;
+	//float x;
+	//float y;
+	//int w;
+	//int h;
+	//float rot;
+	//Uint8 state;
 
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot,state)
+	float whereX;
+	float whereY;
+	float velocityX;
+	float velocityY;
+	float speed;
+	float acceleration;
+	float theta;
+	uint8_t state;
+
+	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot,state)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta,state)
 
 };
 struct ShootMsg: MsgWithId {

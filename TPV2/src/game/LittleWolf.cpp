@@ -12,6 +12,9 @@
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../sdlutils/Texture.h"
+//EDITABLE
+#include "Game.h"
+#include "Networking.h"
 
 using std::string;
 LittleWolf::LittleWolf() :
@@ -64,6 +67,9 @@ void LittleWolf::update() {
 
 	Player &p = _players[_curr_player_id];
 
+	Game::Instance()->get_networking().send_state(p.where.x, p.where.y, p.velocity.x, p.velocity.y, p.speed, p.acceleration,
+		p.theta);
+
 	// dead player don't move/spin/shoot
 	if (p.state != ALIVE)
 		return;
@@ -71,6 +77,7 @@ void LittleWolf::update() {
 	spin(p);  // handle spinning
 	move(p);  // handle moving
 	shoot(p); // handle shooting
+
 }
 
 void LittleWolf::load(std::string filename) {
@@ -265,6 +272,52 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 	_curr_player_id = id;
 
 	return true;
+}
+
+void LittleWolf::send_my_info()
+{
+	Player& p = _players[_curr_player_id];
+
+	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.state);
+}
+
+void LittleWolf::killPlayer(std::uint8_t id)
+{
+	_players[id].state = DEAD;
+}
+
+void LittleWolf::removePlayer(std::uint16_t id)
+{
+	_players[id].state = NOT_USED;
+}
+
+void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, std::uint8_t state)
+{
+	Player& p = _players[id];
+
+	p.id = id;
+	p.where.y = whereX;
+	p.where.x = whereY;
+	p.velocity.x = velocityX;
+	p.velocity.y = velocityY;
+	p.speed = speed;
+	p.acceleration = acceleration;
+	p.theta = theta;
+	p.state = static_cast<PlayerState>(state);
+}
+
+void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta)
+{
+	Player& p = _players[id];
+
+	p.id = id;
+	p.where.y = whereX;
+	p.where.x = whereY;
+	p.velocity.x = velocityX;
+	p.velocity.y = velocityY;
+	p.speed = speed;
+	p.acceleration = acceleration;
+	p.theta = theta;
 }
 
 void LittleWolf::render() {

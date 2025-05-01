@@ -64,10 +64,12 @@ bool Game::initGame(const char *map, char* host, Uint16 port) {
 	_little_wolf->init(sdlutils().window(), sdlutils().renderer());
 
 	// add some players
-	_little_wolf->addPlayer(0);
-	_little_wolf->addPlayer(1);
-	_little_wolf->addPlayer(2);
-	_little_wolf->addPlayer(3);
+	//_little_wolf->addPlayer(0);
+	//_little_wolf->addPlayer(1);
+	//_little_wolf->addPlayer(2);
+	//_little_wolf->addPlayer(3);
+
+	_little_wolf->addPlayer(_net->client_id());
 
 	return true;
 }

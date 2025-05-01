@@ -17,10 +17,20 @@ public:
 	virtual ~Game();
 	bool initGame(const char *map, char *host, Uint16 port);
 	void start();
+
+	LittleWolf& get_littleWolf() {
+		return *_little_wolf;
+	}
+
+	Networking& get_networking() {
+		return *_net;
+	}
+
+
 private:
 	bool init();
 	LittleWolf* _little_wolf;
 	Networking* _net;
-
+	
 };
 
