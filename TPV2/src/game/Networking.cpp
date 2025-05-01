@@ -158,7 +158,7 @@ void Networking::send_state(float whereX, float whereY, float velocityX, float v
 
 	PlayerStateMsg m;
 
-	m._type = _PLAYER_INFO;
+	m._type = _PLAYER_STATE;
 	m._client_id = _clientId;
 	m.whereX = whereX;
 	m.whereY = whereY;
@@ -171,7 +171,6 @@ void Networking::send_state(float whereX, float whereY, float velocityX, float v
 }
 
 void Networking::handle_player_state(const PlayerStateMsg &m) {
-
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_state(m._client_id, m.whereX, m.whereY,
 			m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta);

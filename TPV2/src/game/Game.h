@@ -29,6 +29,7 @@ public:
 
 private:
 	bool init();
+	void check_collisions();
 	LittleWolf* _little_wolf;
 	Networking* _net;
 	

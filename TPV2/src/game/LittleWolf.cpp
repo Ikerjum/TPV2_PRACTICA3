@@ -268,8 +268,9 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 	// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
 	_map.walling[(int) p.where.y][(int) p.where.x] = player_to_tile(id);
 	_players[id] = p;
-
+	
 	_curr_player_id = id;
+	send_my_info();
 
 	return true;
 }
@@ -289,6 +290,8 @@ void LittleWolf::killPlayer(std::uint8_t id)
 void LittleWolf::removePlayer(std::uint16_t id)
 {
 	_players[id].state = NOT_USED;
+	_map.walling[(int)_players[id].where.y][(int)_players[id].where.x] = 0;
+	send_my_info();
 }
 
 void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, std::uint8_t state)
@@ -304,20 +307,25 @@ void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY,
 	p.acceleration = acceleration;
 	p.theta = theta;
 	p.state = static_cast<PlayerState>(state);
+
+	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
 }
 
 void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta)
 {
 	Player& p = _players[id];
+	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
 
 	p.id = id;
-	p.where.y = whereX;
-	p.where.x = whereY;
+	p.where.x = whereX;
+	p.where.y = whereY;
 	p.velocity.x = velocityX;
 	p.velocity.y = velocityY;
 	p.speed = speed;
 	p.acceleration = acceleration;
 	p.theta = theta;
+
+	_map.walling[(int)p.where.y][(int)p.where.x] = player_to_tile(id);
 }
 
 void LittleWolf::render() {

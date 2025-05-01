@@ -6,7 +6,7 @@
 #include "../sdlutils/SDLUtils.h"
 #include "LittleWolf.h"
 #include "Networking.h"
-
+#include "../utils/Collisions.h"
 
 Game::Game() :
 		_little_wolf(), //
@@ -98,9 +98,12 @@ void Game::start() {
 		}
 
 		_little_wolf->update();
+		_net->update();
+
+		check_collisions();
 
 		// the clear is not necessary since the texture we copy to the window occupies the whole screen
-		// sdlutils().clearRenderer();
+		sdlutils().clearRenderer();
 
 		_little_wolf->render();
 
@@ -112,10 +115,48 @@ void Game::start() {
 			SDL_Delay(10 - frameTime);
 	}
 
+	_net->disconnect();
 }
 
 bool Game::init()
 {
 	return true;
+}
+
+void Game::check_collisions()
+{
+	//if (!net_->is_master())
+	//return;
+	//
+	//for (Bullets::Bullet &b : *bm_) {
+	//	if (b.used) {
+	//		for (Fighter::Player &p : *fighters_) {
+	//			if (p.state == Fighter::ALIVE) {
+	//				if (Collisions::collidesWithRotation(p.pos, p.width,
+	//						p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
+	//					net_->send_dead(p.id);
+	//					continue;
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
+
+	//if (!_net->is_master())
+	//return;
+	
+	//for (Bullets::Bullet &b : *bm_) {
+	//	if (b.used) {
+	//		for (LittleWolf::Player &p : _little_wolf->getPlayers()) {
+	//			if (p.state == LittleWolf::PlayerState::ALIVE) {
+	//				if (Collisions::collidesWithRotation(p.pos, p.width,
+	//						p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
+	//					_net->send_dead(p.id);
+	//					continue;
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
 }
 
