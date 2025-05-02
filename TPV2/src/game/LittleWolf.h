@@ -138,21 +138,6 @@ public:
 	// add a new player with identifier <id>, returns false if the id is already occupied
 	bool addPlayer(std::uint8_t id);
 
-	//EDITABLE
-	void send_my_info();
-	void killPlayer(std::uint8_t id);
-	void removePlayer(std::uint16_t id);
-	void update_player_info(std::uint8_t id,float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, std::uint8_t state);
-	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta);
-	//void bringAllToLife(); //deberia ser privado
-	//bool shoot(Player& p); //deberia ser privado
-	Player* getPlayers() {
-		return _players;
-	}
-	void checkCollisions(std::uint8_t id, int hit);
-
 	// initialize the SDL window information
 	void init(SDL_Window *window, SDL_Renderer *render);
 
@@ -169,6 +154,24 @@ public:
 	int get_yres() {
 		return _yres;
 	}
+
+	//EDITABLE
+	void send_my_info();
+	void killPlayer(std::uint8_t id);
+	void removePlayer(std::uint16_t id);
+	void update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
+		float theta, std::uint8_t state);
+	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
+		float theta);
+	//void bringAllToLife(); //deberia ser privado
+	//bool shoot(Player& p); //deberia ser privado
+	Player* getPlayers() {
+		return _players;
+	}
+	void checkCollisions(std::uint8_t id, int hit);
+	void RestartAll();
+	bool RegisterMoreThanTwoLifes();
+	int getPlayersUsed();
 
 private:
 

@@ -56,6 +56,71 @@ void LittleWolf::checkCollisions(std::uint8_t id, int hit)
 	//}
 }
 
+void LittleWolf::RestartAll()
+{
+
+	for (auto i = 0u; i < _max_player; i++) {
+
+		if (_players[i].state != NOT_USED)
+		{
+			uint8_t playerId = _players[i].id;
+			auto& rand = sdlutils().rand();
+			// The search for an empty cell start at a random position (orow,ocol)
+			uint16_t orow = rand.nextInt(0, _map.walling_height);
+			uint16_t ocol = rand.nextInt(0, _map.walling_width);
+
+			// search for an empty cell
+			uint16_t row = orow;
+			uint16_t col = (ocol + 1) % _map.walling_width;
+			while (!((orow == row) && (ocol == col)) && _map.walling[row][col] != 0) {
+				col = (col + 1) % _map.walling_width;
+				if (col == 0)
+					row = (row + 1) % _map.walling_height;
+			}
+
+			// handle the case where the search is failed, which in principle should never
+			// happen unless we start with map with few empty cells
+			if (row >= _map.walling_height)
+				continue;
+
+			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = 0;
+			_players[i].where.x = col + 0.5f; // where to put the player
+			_players[i].where.y = row + 0.5f; // where to put the player
+			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = player_to_tile(playerId);
+		}
+	}
+
+	bringAllToLife();
+}
+
+bool LittleWolf::RegisterMoreThanTwoLifes()
+{
+	int num_alive = 0;
+
+	for (auto i = 0u; i < _max_player; i++) {
+		if (_players[i].state == ALIVE) {
+			num_alive++;
+		}
+	}
+
+	if (num_alive < 2) {
+		return false;
+	}
+
+	return true;
+}
+
+int LittleWolf::getPlayersUsed()
+{
+	int p = 0;
+	for (auto i = 0u; i < _max_player; i++) {
+		if (_players[i].state == ALIVE || _players[i].state == DEAD) {
+			p++;
+		}
+	}
+	return p;
+}
+
 
 void LittleWolf::init(SDL_Window *window, SDL_Renderer *render) {
 	// for some reason it is created with a rotation of 90 degrees -- must be easier to
@@ -90,6 +155,14 @@ void LittleWolf::update() {
 	}
 
 	Player &p = _players[_curr_player_id];
+
+
+	if (getPlayersUsed() > 1) {
+		if (!RegisterMoreThanTwoLifes()) {
+			RestartAll();
+		}
+	}
+
 
 	// dead player don't move/spin/shoot
 	if (p.state != ALIVE)

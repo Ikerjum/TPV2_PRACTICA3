@@ -97,6 +97,10 @@ void Game::start() {
 				continue;
 			}
 
+			if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
+				_net->send_restart();
+			}
+
 		}
 
 		_little_wolf->update();

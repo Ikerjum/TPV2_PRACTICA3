@@ -148,11 +148,8 @@ void Networking::update() {
 }
 
 void Networking::handle_new_client(Uint8 id) {
-	//NO LLEGA A EJECUTARSE NUNCA
-	//std::cout << "Nuevo cliente conectado: " << (int)id << std::endl;
 	if (id != _clientId)
 		Game::Instance()->get_littleWolf().send_my_info();
-	//std::cout << "NUEVO CLIENTE CONECTADISIMO" << std::endl;
 }
 
 void Networking::handle_disconnet(Uint8 id) {
@@ -177,14 +174,10 @@ void Networking::send_state(float whereX, float whereY, float velocityX, float v
 }
 
 void Networking::handle_player_state(const PlayerStateMsg &m) {
-	//LLEGA A EJECUTARSE SOLO UNA VEZ
-	std::cout << "PROCESANDO ESTADO DEL JUGADOR CON ID: " << (int)m._client_id << std::endl;
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_state(m._client_id, m.whereX, m.whereY,
 			m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta);
 	}
-	//LLEGA A EJECUTARSE SOLO UNA VEZ
-	std::cout << "ESTADO DEL JUGADOR PROCESADO" << std::endl;
 }
 
 void Networking::send_shoot(Uint8 id, int hit) {
@@ -192,13 +185,6 @@ void Networking::send_shoot(Uint8 id, int hit) {
 	m._type = _SHOOT;
 	m._client_id = id;
 	m.hit = hit;
-	//m.x = p.getX();
-	//m.y = p.getY();
-	//m.vx = v.getX();
-	//m.vy = v.getY();
-	//m.w = width;
-	//m.h = height;
-	//m.rot = r;
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
@@ -254,5 +240,7 @@ void Networking::send_restart() {
 }
 
 void Networking::handle_restart() {
-	//Game::Instance()->get_littleWolf().bringAllToLife();
+	if (is_master()) {
+		Game::Instance()->get_littleWolf().RestartAll();
+	}
 }
