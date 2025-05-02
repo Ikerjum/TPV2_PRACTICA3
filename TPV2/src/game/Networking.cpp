@@ -104,12 +104,6 @@ void Networking::update() {
 		//SE EJECUTA SOLO UNA VEZ
 		//std::cout << "ACTUALIZANDO DESERIALIZED" << SDLNetUtils::deserializedReceive(m0, _p, _sock) << std::endl;
 
-		//NO HAY PROBLEMAS DE TAMAÑO
-		if (_p->len < sizeof(Msg)) {
-			std::cerr << "Paquete recibido demasiado pequeño: " << _p->len << " bytes" << std::endl;
-			continue;
-		}
-
 		switch (m0._type) {
 		case _NEW_CLIENT_CONNECTED:
 			m1.deserialize(_p->data);
@@ -122,26 +116,20 @@ void Networking::update() {
 			_masterId = m1._master_id;
 			handle_disconnet(m1._client_id);
 			break;
-		//EL ERROR PERSISTE SI COMENTO TODO ESTE CASO
+
 		case _PLAYER_STATE:
 			m2.deserialize(_p->data);
-			//LLEGA A EJECUTARSE SOLO UNA VEZ
-			//std::cout << "Datos deserializados: whereX=" << m2.whereX
-			//	<< " whereY=" << m2.whereY << " velocityX=" << m2.velocityX
-			//	<< " velocityY=" << m2.velocityY << " speed=" << m2.speed
-			//	<< " acceleration=" << m2.acceleration << " theta="
-			//	<< m2.theta << std::endl;
 			handle_player_state(m2);
 			break;
-		//SI COMENTO ESTE CASO EL ERROR DESAPARECE
+
 		case _PLAYER_INFO:
 			m5.deserialize(_p->data);
 			handle_player_info(m5);
 			break;
 
 		case _SHOOT:
-			//m3.deserialize(_p->data);
-			//handle_shoot(m3);
+			m3.deserialize(_p->data);
+			handle_shoot(m3);
 			break;
 
 		case _DEAD:
@@ -199,27 +187,28 @@ void Networking::handle_player_state(const PlayerStateMsg &m) {
 	std::cout << "ESTADO DEL JUGADOR PROCESADO" << std::endl;
 }
 
-void Networking::send_shoot(Vector2D p, Vector2D v, int width, int height,
-		float r) {
+void Networking::send_shoot(Uint8 id, int hit) {
 	ShootMsg m;
 	m._type = _SHOOT;
-	m._client_id = _clientId;
-	m.x = p.getX();
-	m.y = p.getY();
-	m.vx = v.getX();
-	m.vy = v.getY();
-	m.w = width;
-	m.h = height;
-	m.rot = r;
+	m._client_id = id;
+	m.hit = hit;
+	//m.x = p.getX();
+	//m.y = p.getY();
+	//m.vx = v.getX();
+	//m.vy = v.getY();
+	//m.w = width;
+	//m.h = height;
+	//m.rot = r;
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
 void Networking::handle_shoot(const ShootMsg &m) {
-	LittleWolf::Player p;
-	p.where.x = m.x;
-	p.where.y = m.y;
-	Game::Instance()->get_littleWolf().shoot(p);
-
+	if (is_master()) {
+		Game::Instance()->get_littleWolf().checkCollisions(m._client_id,m.hit);
+		if (m.hit == 1) {
+			send_dead(m._client_id);
+		}
+	}
 }
 
 void Networking::send_dead(Uint8 id) {
@@ -265,5 +254,5 @@ void Networking::send_restart() {
 }
 
 void Networking::handle_restart() {
-	Game::Instance()->get_littleWolf().bringAllToLife();
+	//Game::Instance()->get_littleWolf().bringAllToLife();
 }

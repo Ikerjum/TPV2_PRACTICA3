@@ -45,7 +45,8 @@ public:
 	//	PlayerState state;   // the state
 	//};
 	
-	void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
+	//void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
+	void send_shoot(Uint8 id, int hit);
 	//void send_shoot(Vector2D p);
 	void send_dead(Uint8 id);
 	void send_restart();

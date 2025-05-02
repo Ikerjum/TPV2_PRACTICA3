@@ -145,9 +145,19 @@ void Game::check_collisions()
 	//	}
 	//}
 
-	if (!_net->is_master())
-	return;
+	//if (!_net->is_master())
+	//return;
 	
+	//if (_little_wolf->shoot(_little_wolf->getPlayers()[0]))
+	//{
+	//	std::cout << "shoot" << std::endl;
+	//	_net->send_shoot(Vector2D(_little_wolf->getPlayers()[0].where.x, _little_wolf->getPlayers()[0].where.y),
+	//					 Vector2D(_little_wolf->getPlayers()[0].velocity.x,_little_wolf->getPlayers()[0].velocity.y),
+	//					 10, 10, _little_wolf->getPlayers()[0].theta);
+
+	//	
+	//}
+
 	//for (Bullets::Bullet &b : *bm_) {
 	//	if (b.used) {
 	//		for (LittleWolf::Player &p : _little_wolf->getPlayers()) {

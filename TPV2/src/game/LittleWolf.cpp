@@ -33,6 +33,30 @@ LittleWolf::~LittleWolf() {
 	// nothing to delete, the walling are delete in the Map's destructor
 }
 
+void LittleWolf::checkCollisions(std::uint8_t id, int hit)
+{
+	if (hit == 1) {
+		getPlayers()[id].state = DEAD;
+	}
+	//if (!net_->is_master())
+	//return;
+	//
+	//for (Bullets::Bullet &b : *bm_) {
+	//	if (b.used) {
+	//		for (Fighter::Player &p : *fighters_) {
+	//			if (p.state == Fighter::ALIVE) {
+	//				if (Collisions::collidesWithRotation(p.pos, p.width,
+	//						p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
+	//					net_->send_dead(p.id);
+	//					continue;
+	//				}
+	//			}
+	//		}
+	//	}
+	//}
+}
+
+
 void LittleWolf::init(SDL_Window *window, SDL_Renderer *render) {
 	// for some reason it is created with a rotation of 90 degrees -- must be easier to
 	// manipulate coordinates
@@ -619,14 +643,13 @@ void LittleWolf::spin(Player &p) {
 bool LittleWolf::shoot(Player &p) {
 	auto &ihdlr = ih();
 
+	int damage = 0;
+
 	// Space shoot -- we use keyDownEvent to force a complete press/release for each bullet
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_SPACE)) {
 
 		// play gun shot sound
 		sdlutils().soundEffects().at("gunshot").play();
-
-		Game::Instance()->get_networking().send_shoot(Vector2D(p.where.x,p.where.y),Vector2D(p.velocity.x,p.velocity.y),
-			10,10,p.theta);
 
 		// we shoot in several directions, because with projection what you see is not exact
 		for (float d = -0.05; d <= 0.05; d += 0.005) {
@@ -650,10 +673,14 @@ bool LittleWolf::shoot(Player &p) {
 				uint8_t id = tile_to_player(hit.tile);
 				_players[id].state = DEAD;
 				sdlutils().soundEffects().at("pain").play();
+				
+				damage = 1;
+				Game::Instance()->get_networking().send_shoot(_players[id].id, damage);
 				return true;
 			}
 		}
 	}
+	
 	return false;
 }
 

@@ -146,11 +146,12 @@ public:
 		float theta, std::uint8_t state);
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta);
-	void bringAllToLife(); //deberia ser privado
-	bool shoot(Player& p); //deberia ser privado
+	//void bringAllToLife(); //deberia ser privado
+	//bool shoot(Player& p); //deberia ser privado
 	Player* getPlayers() {
 		return _players;
 	}
+	void checkCollisions(std::uint8_t id, int hit);
 
 	// initialize the SDL window information
 	void init(SDL_Window *window, SDL_Renderer *render);
@@ -171,8 +172,8 @@ public:
 
 private:
 
-	//// mark all (used) player alive
-	//void bringAllToLife();
+	// mark all (used) player alive
+	void bringAllToLife();
 
 	// switch to the view of the next player
 	void switchToNextPlayer();
@@ -186,7 +187,7 @@ private:
 			bool ignore_players, bool ignore_deads);
 
 	// Moves the player when w,a,s,d are held down. Handles collision detection for the walls.
-	//bool shoot(Player &p);
+	bool shoot(Player &p);
 
 	// Spins the player when keys grid_h,l are held down. When left-shit is held down the move is slower
 	inline void spin(Player &p);
