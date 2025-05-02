@@ -1,45 +1,73 @@
-﻿  LittleWolf.cpp
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(287,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(287,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(288,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(288,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(314,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(314,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(322,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(322,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
-  (compilando archivo de origen "../src/game/LittleWolf.cpp")
-  
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(229,26): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(231,41): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(248,61): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(266,18): warning C4554: "|": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(492,35): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(492,21): warning C4244: 'inicializando': conversión de 'double' a 'const float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(494,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(494,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(495,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(495,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(609,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(609,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(612,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(612,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(638,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(638,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(638,37): warning C4244: 'argumento': conversión de 'uint_fast16_t' a 'float'; posible pérdida de datos
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(728,16): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
-C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(728,41): warning C4305: '+=': truncamiento de 'double' a 'float'
-  TPV2.vcxproj -> C:\Users\Hector\Documents\GitHub\TPV2_PRACTICA3\TPV2\bin\TPV2Debug.exe
+﻿  Game.cpp
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(289,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(289,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(290,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(290,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(316,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(316,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(324,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(324,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+  LittleWolf.cpp
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(289,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(289,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(290,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(290,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(316,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(316,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(324,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(324,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(151,54): warning C4018: '>': no coinciden signed/unsigned
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(220,26): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(222,41): warning C4267: '=': conversión de 'size_t' a 'uint16_t'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(239,61): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(257,29): warning C4554: "|": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(483,35): warning C4244: 'inicializando': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(483,21): warning C4244: 'inicializando': conversión de 'double' a 'const float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(485,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(485,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(486,32): warning C4244: 'inicializando': conversión de 'float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(486,16): warning C4244: 'inicializando': conversión de 'float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(600,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(600,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(603,51): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(603,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(629,65): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(629,50): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(629,37): warning C4244: 'argumento': conversión de 'uint_fast16_t' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(719,16): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.cpp(719,46): warning C4305: '+=': truncamiento de 'double' a 'float'
+  Networking.cpp
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(289,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(289,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(290,18): warning C4244: 'inicializando': conversión de 'const float' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(290,15): warning C4244: 'inicializando': conversión de 'const float' a 'const int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(316,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(316,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(324,23): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\LittleWolf.h(324,17): warning C4244: 'inicializando': conversión de 'int' a 'const float'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(589,10): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<T>(T &,UDPpacket *,UDPsocket)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\Networking.cpp(51,15): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<Msg>(T &,UDPpacket *,UDPsocket,const IPaddress &)" que se está compilando
+          with
+          [
+              T=Msg
+          ]
+  UDPServer.cpp
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\sdlutils\SDLNetUtils.h(581,16): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServer.cpp(101,21): message : Vea la referencia a la creación de una instancia de la función plantilla "int SDLNetUtils::serializedSend<MsgWithMasterId>(T &,UDPpacket *,UDPsocket)" que se está compilando
+          with
+          [
+              T=MsgWithMasterId
+          ]
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServer.h(17,17): warning C4244: '=': conversión de '__int64' a 'int'; posible pérdida de datos
+C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\src\game\UDPServer.cpp(105,8): message : Vea la referencia a la creación de una instancia de la función plantilla "void UDPServer::send_to_all_except<MsgWithMasterId>(T &,int)" que se está compilando
+          with
+          [
+              T=MsgWithMasterId
+          ]
+  Generando código...
+  TPV2.vcxproj -> C:\Users\ikerm\Desktop\APUNTES_SEGUNDO_CURSO\TPV2\TPV2_PRACTICA3\TPV2\bin\TPV2Debug.exe

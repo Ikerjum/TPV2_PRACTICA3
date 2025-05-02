@@ -29,7 +29,7 @@ public:
 
 private:
 	bool init();
-	void check_collisions();
+	//void check_collisions(); LO CONTROLA LITTLEWOLF
 	LittleWolf* _little_wolf;
 	Networking* _net;
 	

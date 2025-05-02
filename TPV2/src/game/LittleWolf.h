@@ -163,8 +163,6 @@ public:
 		float theta, std::uint8_t state);
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta);
-	//void bringAllToLife(); //deberia ser privado
-	//bool shoot(Player& p); //deberia ser privado
 	Player* getPlayers() {
 		return _players;
 	}
@@ -172,14 +170,18 @@ public:
 	void RestartAll();
 	bool RegisterMoreThanTwoLifes();
 	int getPlayersUsed();
+	int timerToRestart = 0;
+	bool beginTimerToRestart = false;
+	bool seeMap = false;
 
 private:
 
 	// mark all (used) player alive
 	void bringAllToLife();
 
+	//BORRADO POR ENUNCIADO APARTADO 9
 	// switch to the view of the next player
-	void switchToNextPlayer();
+	//void switchToNextPlayer();
 
 	// Calculates wall size using the <corrected> ray to the wall.
 	Wall project(const int xres, const int yres, const float focal,

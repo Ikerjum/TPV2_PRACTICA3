@@ -38,22 +38,6 @@ void LittleWolf::checkCollisions(std::uint8_t id, int hit)
 	if (hit == 1) {
 		getPlayers()[id].state = DEAD;
 	}
-	//if (!net_->is_master())
-	//return;
-	//
-	//for (Bullets::Bullet &b : *bm_) {
-	//	if (b.used) {
-	//		for (Fighter::Player &p : *fighters_) {
-	//			if (p.state == Fighter::ALIVE) {
-	//				if (Collisions::collidesWithRotation(p.pos, p.width,
-	//						p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
-	//					net_->send_dead(p.id);
-	//					continue;
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
 }
 
 void LittleWolf::RestartAll()
@@ -87,6 +71,8 @@ void LittleWolf::RestartAll()
 			_players[i].where.x = col + 0.5f; // where to put the player
 			_players[i].where.y = row + 0.5f; // where to put the player
 			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = player_to_tile(playerId);
+
+			//send_my_info();
 		}
 	}
 
@@ -143,11 +129,6 @@ void LittleWolf::update() {
 			_show_help = !_show_help;
 		}
 
-		// N switches to the next player view
-		//if (ihdlr.isKeyDown(SDL_SCANCODE_N)) {
-		//	switchToNextPlayer();
-		//}
-
 		// R brings deads to life
 		if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
 			bringAllToLife();
@@ -156,13 +137,23 @@ void LittleWolf::update() {
 
 	Player &p = _players[_curr_player_id];
 
-
+	
 	if (getPlayersUsed() > 1) {
 		if (!RegisterMoreThanTwoLifes()) {
-			RestartAll();
+			if (!beginTimerToRestart) {
+				timerToRestart = sdlutils().currRealTime() + 5000;
+				beginTimerToRestart = true;
+			}
+			std::cout << "timerToRestart: " << timerToRestart - sdlutils().currRealTime() << std::endl;
 		}
 	}
 
+	if (timerToRestart > 0 && sdlutils().currRealTime() > timerToRestart && beginTimerToRestart) {
+		//Game::Instance()->get_networking().send_restart();
+		RestartAll();
+		timerToRestart = 0;
+		beginTimerToRestart = false;
+	}
 
 	// dead player don't move/spin/shoot
 	if (p.state != ALIVE)
@@ -757,17 +748,17 @@ bool LittleWolf::shoot(Player &p) {
 	return false;
 }
 
-void LittleWolf::switchToNextPlayer() {
-
-	// search the next player in the palyer's array
-	int j = (_curr_player_id + 1) % _max_player;
-	while (j != _curr_player_id && _players[j].state == NOT_USED)
-		j = (j + 1) % _max_player;
-
-	// move to the next player view
-	_curr_player_id = j;
-
-}
+//void LittleWolf::switchToNextPlayer() {
+//
+//	// search the next player in the palyer's array
+//	int j = (_curr_player_id + 1) % _max_player;
+//	while (j != _curr_player_id && _players[j].state == NOT_USED)
+//		j = (j + 1) % _max_player;
+//
+//	// move to the next player view
+//	_curr_player_id = j;
+//
+//}
 
 void LittleWolf::bringAllToLife() {
 	// bring all dead players to life -- all stay in the same position

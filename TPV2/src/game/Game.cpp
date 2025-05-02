@@ -96,18 +96,16 @@ void Game::start() {
 				exit = true;
 				continue;
 			}
-
-			if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
-				_net->send_restart();
-			}
-
+			//BORRADO POR ENUNCIADO APARTADO 9
+			//if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
+			//	_net->send_restart();
+			//}
 		}
 
 		_little_wolf->update();
 		_net->update();
 		
-
-		check_collisions();
+		//check_collisions(); LO CONTROLA LITTLEWOLF
 
 		// the clear is not necessary since the texture we copy to the window occupies the whole screen
 		//sdlutils().clearRenderer();
@@ -130,53 +128,24 @@ bool Game::init()
 	return true;
 }
 
-void Game::check_collisions()
-{
-	//if (!net_->is_master())
-	//return;
-	//
-	//for (Bullets::Bullet &b : *bm_) {
-	//	if (b.used) {
-	//		for (Fighter::Player &p : *fighters_) {
-	//			if (p.state == Fighter::ALIVE) {
-	//				if (Collisions::collidesWithRotation(p.pos, p.width,
-	//						p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
-	//					net_->send_dead(p.id);
-	//					continue;
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-
-	//if (!_net->is_master())
-	//return;
-	
-	//if (_little_wolf->shoot(_little_wolf->getPlayers()[0]))
-	//{
-	//	std::cout << "shoot" << std::endl;
-	//	_net->send_shoot(Vector2D(_little_wolf->getPlayers()[0].where.x, _little_wolf->getPlayers()[0].where.y),
-	//					 Vector2D(_little_wolf->getPlayers()[0].velocity.x,_little_wolf->getPlayers()[0].velocity.y),
-	//					 10, 10, _little_wolf->getPlayers()[0].theta);
-
-	//	
-	//}
-
-	//for (Bullets::Bullet &b : *bm_) {
-	//	if (b.used) {
-	//		for (LittleWolf::Player &p : _little_wolf->getPlayers()) {
-	//			if (p.state == LittleWolf::PlayerState::ALIVE) {
-	//				Vector2D p_pos(p.where.x, p.where.y);
-	//				if (Collisions::collidesWithRotation(p_pos, 10,
-	//						10, p.theta, b.pos, b.width, b.height, b.rot)) {
-	//					_net->send_dead(p.id);
-	//					continue;
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-
-	//for (LittleWolf::Player &p : _little_wolf->getPlayers())
-}
+//LO CONTROLA LITTLEWOLF
+//void Game::check_collisions()
+//{
+//	if (!net_->is_master())
+//	return;
+//	
+//	for (Bullets::Bullet &b : *bm_) {
+//		if (b.used) {
+//			for (Fighter::Player &p : *fighters_) {
+//				if (p.state == Fighter::ALIVE) {
+//					if (Collisions::collidesWithRotation(p.pos, p.width,
+//							p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
+//						net_->send_dead(p.id);
+//						continue;
+//					}
+//				}
+//			}
+//		}
+//	}
+//}
 
