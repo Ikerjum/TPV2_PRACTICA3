@@ -625,6 +625,9 @@ bool LittleWolf::shoot(Player &p) {
 		// play gun shot sound
 		sdlutils().soundEffects().at("gunshot").play();
 
+		Game::Instance()->get_networking().send_shoot(Vector2D(p.where.x,p.where.y),Vector2D(p.velocity.x,p.velocity.y),
+			10,10,p.theta);
+
 		// we shoot in several directions, because with projection what you see is not exact
 		for (float d = -0.05; d <= 0.05; d += 0.005) {
 

@@ -145,15 +145,16 @@ void Game::check_collisions()
 	//	}
 	//}
 
-	//if (!_net->is_master())
-	//return;
+	if (!_net->is_master())
+	return;
 	
 	//for (Bullets::Bullet &b : *bm_) {
 	//	if (b.used) {
 	//		for (LittleWolf::Player &p : _little_wolf->getPlayers()) {
 	//			if (p.state == LittleWolf::PlayerState::ALIVE) {
-	//				if (Collisions::collidesWithRotation(p.pos, p.width,
-	//						p.height, p.rot, b.pos, b.width, b.height, b.rot)) {
+	//				Vector2D p_pos(p.where.x, p.where.y);
+	//				if (Collisions::collidesWithRotation(p_pos, 10,
+	//						10, p.theta, b.pos, b.width, b.height, b.rot)) {
 	//					_net->send_dead(p.id);
 	//					continue;
 	//				}
@@ -161,5 +162,7 @@ void Game::check_collisions()
 	//		}
 	//	}
 	//}
+
+	//for (LittleWolf::Player &p : _little_wolf->getPlayers())
 }
 

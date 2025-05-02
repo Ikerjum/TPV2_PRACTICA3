@@ -199,26 +199,28 @@ void Networking::handle_player_state(const PlayerStateMsg &m) {
 	std::cout << "ESTADO DEL JUGADOR PROCESADO" << std::endl;
 }
 
-//void Networking::send_shoot(Vector2D p, Vector2D v, int width, int height,
-//		float r) {
-//	ShootMsg m;
-//	m._type = _SHOOT;
-//	m._client_id = _clientId;
-//	m.x = p.getX();
-//	m.y = p.getY();
-//	m.vx = v.getX();
-//	m.vy = v.getY();
-//	m.w = width;
-//	m.h = height;
-//	m.rot = r;
-//	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
-//}
+void Networking::send_shoot(Vector2D p, Vector2D v, int width, int height,
+		float r) {
+	ShootMsg m;
+	m._type = _SHOOT;
+	m._client_id = _clientId;
+	m.x = p.getX();
+	m.y = p.getY();
+	m.vx = v.getX();
+	m.vy = v.getY();
+	m.w = width;
+	m.h = height;
+	m.rot = r;
+	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
+}
 
-//void Networking::handle_shoot(const ShootMsg &m) {
-//	Game::Instance()->get_bullets().shoot(Vector2D(m.x, m.y),
-//			Vector2D(m.vx, m.vy), m.w, m.h, m.rot);
-//
-//}
+void Networking::handle_shoot(const ShootMsg &m) {
+	LittleWolf::Player p;
+	p.where.x = m.x;
+	p.where.y = m.y;
+	Game::Instance()->get_littleWolf().shoot(p);
+
+}
 
 void Networking::send_dead(Uint8 id) {
 	MsgWithId m;

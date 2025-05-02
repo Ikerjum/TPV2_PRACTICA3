@@ -15,6 +15,10 @@
 
 #include "../sdlutils/InputHandler.h"
 
+#include <iterator>
+#include <array>
+
+
 class LittleWolf {
 public:
 
@@ -143,6 +147,10 @@ public:
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta);
 	void bringAllToLife(); //deberia ser privado
+	bool shoot(Player& p); //deberia ser privado
+	Player* getPlayers() {
+		return _players;
+	}
 
 	// initialize the SDL window information
 	void init(SDL_Window *window, SDL_Renderer *render);
@@ -178,7 +186,7 @@ private:
 			bool ignore_players, bool ignore_deads);
 
 	// Moves the player when w,a,s,d are held down. Handles collision detection for the walls.
-	bool shoot(Player &p);
+	//bool shoot(Player &p);
 
 	// Spins the player when keys grid_h,l are held down. When left-shit is held down the move is slower
 	inline void spin(Player &p);
