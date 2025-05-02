@@ -499,7 +499,7 @@ void LittleWolf::render_upper_view() {
 
 	for (int x = 0; x < _gpu.xres; x++)
 		for (int y = 0; y < _gpu.yres; y++)
-			put(display, y, x, 0x00000000);
+			put(display, x, y, 0x00000000);
 
 	for (auto x = 0u; x < _map.walling_height; x++)
 		for (auto y = 0u; y < _map.walling_width; y++) {

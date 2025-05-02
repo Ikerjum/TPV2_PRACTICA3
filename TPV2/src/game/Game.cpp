@@ -106,7 +106,7 @@ void Game::start() {
 		check_collisions();
 
 		// the clear is not necessary since the texture we copy to the window occupies the whole screen
-		sdlutils().clearRenderer();
+		//sdlutils().clearRenderer();
 
 		_little_wolf->render();
 
