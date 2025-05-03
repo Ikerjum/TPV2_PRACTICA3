@@ -234,13 +234,15 @@ void Networking::handle_player_info(const PlayerInfoMsg &m) {
 }
 
 void Networking::send_restart() {
-	Msg m;
-	m._type = _RESTART;
-	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
+	if (is_master()) { //El master solo manda el mensaje
+		Msg m;
+		m._type = _RESTART;
+		SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
+	}
 }
 
-void Networking::handle_restart() {
-	if (is_master()) {
-		Game::Instance()->get_littleWolf().RestartAll();
-	}
+void Networking::handle_restart() { //Se comprueba si es el master antes de esto
+	Game::Instance()->get_littleWolf().RestartAll();
+	Game::Instance()->get_littleWolf().setBeginTimerToRestart(false); //Necesario porque sino se ejecuta dos veces
+	Game::Instance()->get_littleWolf().setTimerToRestart(0); //Necesario porque sino se ejecuta dos veces
 }

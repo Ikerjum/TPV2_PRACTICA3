@@ -170,9 +170,18 @@ public:
 	void RestartAll();
 	bool RegisterMoreThanTwoLifes();
 	int getPlayersUsed();
+private:
 	int timerToRestart = 0;
 	bool beginTimerToRestart = false;
 	bool seeMap = false;
+public:
+	void setBeginTimerToRestart(bool set) {
+		beginTimerToRestart = set;
+	}
+	void setTimerToRestart(int t) {
+		timerToRestart = t;
+	}
+	//FIN EDITABLE
 
 private:
 

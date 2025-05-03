@@ -68,15 +68,14 @@ void LittleWolf::RestartAll()
 				continue;
 
 			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = 0;
+			_players[i].state = ALIVE; // mark the player alive
 			_players[i].where.x = col + 0.5f; // where to put the player
 			_players[i].where.y = row + 0.5f; // where to put the player
 			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = player_to_tile(playerId);
 
-			//send_my_info();
+			bringAllToLife();
 		}
 	}
-
-	bringAllToLife();
 }
 
 bool LittleWolf::RegisterMoreThanTwoLifes()
@@ -129,15 +128,20 @@ void LittleWolf::update() {
 			_show_help = !_show_help;
 		}
 
+		//BORRADO POR ENUNCIADO APARTADO 9
 		// R brings deads to life
-		if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
-			bringAllToLife();
+		//if (ihdlr.isKeyDown(SDL_SCANCODE_R)) {
+		//	bringAllToLife();
+		//}
+
+		if (ihdlr.isKeyDown(SDL_SCANCODE_M)) {
+			seeMap = !seeMap;
 		}
 	}
 
 	Player &p = _players[_curr_player_id];
 
-	
+
 	if (getPlayersUsed() > 1) {
 		if (!RegisterMoreThanTwoLifes()) {
 			if (!beginTimerToRestart) {
@@ -148,12 +152,15 @@ void LittleWolf::update() {
 		}
 	}
 
-	if (timerToRestart > 0 && sdlutils().currRealTime() > timerToRestart && beginTimerToRestart) {
-		//Game::Instance()->get_networking().send_restart();
-		RestartAll();
+	if (timerToRestart != 0 && sdlutils().currRealTime() > timerToRestart && beginTimerToRestart) {
+		Game::Instance()->get_networking().send_restart();
+		//RestartAll();
+
 		timerToRestart = 0;
 		beginTimerToRestart = false;
+		return;
 	}
+	
 
 	// dead player don't move/spin/shoot
 	if (p.state != ALIVE)
@@ -423,8 +430,8 @@ void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY
 
 void LittleWolf::render() {
 
-	// if the player is dead we only render upper view, otherwise the normal view
-	if (_players[_curr_player_id].state == DEAD)
+	// if the player is dead or we press M we only render upper view , otherwise the normal view
+	if (_players[_curr_player_id].state == DEAD || seeMap)
 		render_upper_view();
 	else
 		render_map(_players[_curr_player_id]);
@@ -632,6 +639,15 @@ void LittleWolf::render_players_info() {
 			y += info.height() + 5;
 
 		}
+	}
+
+	//SI ACTIVAMOS EL TIMER DE REINICIO
+	if (beginTimerToRestart) {
+		Texture infoTimer(sdlutils().renderer(), "The game will restart in: " + std::to_string((timerToRestart - sdlutils().currRealTime()) / 1000) + " seconds.",
+			sdlutils().fonts().at("MFR24"),
+			build_sdlcolor(color_rgba(255)));
+		SDL_Rect dest = build_sdlrect((sdlutils().width() / 2) - (infoTimer.width() / 2), 0, infoTimer.width(), infoTimer.height());
+		infoTimer.render(dest);
 	}
 }
 
