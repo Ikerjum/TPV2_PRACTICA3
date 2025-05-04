@@ -26,6 +26,10 @@ public:
 		return *_net;
 	}
 
+	void string_to_chars(std::string& str, char c_str[11]);
+
+	void chars_to_string(std::string& str, char c_str[11]);
+
 
 private:
 	bool init();

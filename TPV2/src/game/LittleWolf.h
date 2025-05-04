@@ -156,6 +156,9 @@ public:
 	}
 
 	//EDITABLE
+
+	void playSound(Point where, Uint8 sound);
+
 	void send_my_info();
 	void killPlayer(std::uint8_t id);
 	void removePlayer(std::uint16_t id);

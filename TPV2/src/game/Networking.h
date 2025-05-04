@@ -51,6 +51,8 @@ public:
 	void send_dead(Uint8 id);
 	void send_restart();
 
+	void send_sound(Uint8 soundType, float X, float Y);
+
 private:
 
 	void handle_new_client(Uint8 id);
@@ -60,6 +62,8 @@ private:
 	void handle_shoot(const ShootMsg &m);
 	void handle_dead(const MsgWithId &m);
 	void handle_restart();
+
+	void handle_sound(const SoundMsg &m);
 
 	UDPsocket _sock;
 	SDLNet_SocketSet _socketSet;

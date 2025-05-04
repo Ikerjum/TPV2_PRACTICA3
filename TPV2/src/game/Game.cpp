@@ -123,6 +123,20 @@ void Game::start() {
 	_net->disconnect();
 }
 
+void Game::string_to_chars(std::string& str, char c_str[11])
+{
+	auto i = 0u;
+	for (; i < str.size() && i < 10; i++) c_str[i] = str[i];
+	c_str[i] = 0;
+
+}
+
+void Game::chars_to_string(std::string& str, char c_str[11])
+{
+	c_str[10] = 0;
+	str = std::string(c_str);
+}
+
 bool Game::init()
 {
 	return true;

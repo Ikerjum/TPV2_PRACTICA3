@@ -8,7 +8,7 @@
 #include "../utils/Vector2D.h"
 #include "Game.h"
 #include "LittleWolf.h"
-
+#include "../sdlutils/SDLUtils.h"
 Networking::Networking() :
 		_sock(), //
 		_socketSet(), //
@@ -205,6 +205,7 @@ void Networking::send_dead(Uint8 id) {
 }
 
 void Networking::handle_dead(const MsgWithId &m) {
+	
 	Game::Instance()->get_littleWolf().killPlayer(m._client_id);
 }
 
@@ -241,8 +242,28 @@ void Networking::send_restart() {
 	}
 }
 
+void Networking::send_sound(Uint8 SoundType, float X, float Y)
+{
+	SoundMsg m;
+	m._type = _SOUND;
+	m._client_id = _clientId;
+	m.soundType = SoundType;
+	m.originX = X;
+	m.originY = Y;
+	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
+}
+
 void Networking::handle_restart() { //Se comprueba si es el master antes de esto
 	Game::Instance()->get_littleWolf().RestartAll();
 	Game::Instance()->get_littleWolf().setBeginTimerToRestart(false); //Necesario porque sino se ejecuta dos veces
 	Game::Instance()->get_littleWolf().setTimerToRestart(0); //Necesario porque sino se ejecuta dos veces
+}
+
+void Networking::handle_sound(const SoundMsg& m)
+{
+	if (m._client_id != _clientId)
+	{
+		LittleWolf::Point point = { m.originX, m.originY };
+		Game::Instance()->get_littleWolf().playSound(point, m.soundType);
+	}
 }

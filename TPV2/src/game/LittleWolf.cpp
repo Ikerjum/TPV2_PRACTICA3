@@ -373,6 +373,22 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 	return true;
 }
 
+void LittleWolf::playSound(Point where, Uint8 sound)
+{
+	float volume = mag(sub(where, _players[_curr_player_id].where));
+
+	if (sound == 0) {
+		auto playSound = &sdlutils().soundEffects().at("gunshot");
+		playSound->setVolume(volume);
+		playSound->play();
+	}
+	else {
+		auto playSound = &sdlutils().soundEffects().at("pain");
+		playSound->setVolume(volume);
+		playSound->play();
+	}
+}
+
 void LittleWolf::send_my_info()
 {
 	Player& p = _players[_curr_player_id];
@@ -727,9 +743,16 @@ bool LittleWolf::shoot(Player &p) {
 
 	// Space shoot -- we use keyDownEvent to force a complete press/release for each bullet
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_SPACE)) {
-
+		
 		// play gun shot sound
 		sdlutils().soundEffects().at("gunshot").play();
+		
+		SoundMsg m;
+		m._type = _SOUND;
+		m._client_id = _curr_player_id;
+		m.soundType = 0;
+		m.originX = _players[_curr_player_id].where.x;
+		m.originY = _players[_curr_player_id].where.y;
 
 		// we shoot in several directions, because with projection what you see is not exact
 		for (float d = -0.05; d <= 0.05; d += 0.005) {
@@ -752,7 +775,14 @@ bool LittleWolf::shoot(Player &p) {
 			if (hit.tile > 9 && mag(sub(p.where, hit.where)) < _shoot_distace) {
 				uint8_t id = tile_to_player(hit.tile);
 				_players[id].state = DEAD;
-				sdlutils().soundEffects().at("pain").play();
+				playSound(hit.where, 1);
+				
+				SoundMsg m;
+				m._type = _SOUND;
+				m._client_id = _curr_player_id;
+				m.soundType = 1;
+				m.originX = _players[_curr_player_id].where.x;
+				m.originY = _players[_curr_player_id].where.y;
 				
 				damage = 1;
 				Game::Instance()->get_networking().send_shoot(_players[id].id, damage);
