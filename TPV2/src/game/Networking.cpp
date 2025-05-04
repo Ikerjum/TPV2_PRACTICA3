@@ -21,7 +21,7 @@ Networking::Networking() :
 Networking::~Networking() {
 }
 
-bool Networking::init(char *host, Uint16 port) {
+bool Networking::init(char *host, Uint16 port,  std::string& name) {
 
 	if (SDLNet_ResolveHost(&_srvadd, host, port) < 0) {
 		SDLNetUtils::print_SDLNet_error();
@@ -48,6 +48,8 @@ bool Networking::init(char *host, Uint16 port) {
 
 	// request to connect
 	m0._type = _CONNECTION_REQUEST;
+	m1._type = _CONNECTION_REQUEST;
+
 	SDLNetUtils::serializedSend(m0, _p, _sock, _srvadd);
 
 	bool connected = false;
@@ -210,7 +212,7 @@ void Networking::handle_dead(const MsgWithId &m) {
 }
 
 void Networking::send_my_info(float whereX,float whereY, float velocityX, float velocityY, float speed, float acceleration,
-	float theta, uint8_t state) {
+	float theta, uint8_t state, std::string name) {
 
 	PlayerInfoMsg m;
 
@@ -224,13 +226,14 @@ void Networking::send_my_info(float whereX,float whereY, float velocityX, float 
 	m.acceleration = acceleration;
 	m.theta = theta;
 	m.state = state;
+	Game::Instance()->string_to_chars(name, m.name);
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
 void Networking::handle_player_info(const PlayerInfoMsg &m) {
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_info(m._client_id, m.whereX, m.whereY,
-				m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.state);
+				m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.state, m.name);
 	}
 }
 

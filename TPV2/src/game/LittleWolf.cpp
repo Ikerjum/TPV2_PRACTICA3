@@ -322,7 +322,7 @@ void LittleWolf::load(std::string filename) {
 
 }
 
-bool LittleWolf::addPlayer(std::uint8_t id) {
+bool LittleWolf::addPlayer(std::uint8_t id, std::string& name) {
 	assert(id < _max_player);
 
 	if (_players[id].state != NOT_USED)
@@ -353,6 +353,7 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 	// initialize the player
 	Player p = { //
 			id, //
+			name,
 					viewport(0.8f), // focal
 					{ col + 0.5f, row + 0.5f }, // Where.
 					{ 0.0f, 0.0f }, 			// Velocity.
@@ -361,12 +362,10 @@ bool LittleWolf::addPlayer(std::uint8_t id) {
 					0.0f, 			// Rotation angle in radians.
 					ALIVE 			// Player state
 			};
-
 	// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
 	_map.walling[(int) p.where.y][(int) p.where.x] = player_to_tile(id);
 	_players[id] = p;
 	_players[id].state = ALIVE;
-	
 	_curr_player_id = id;
 	send_my_info();
 
@@ -393,7 +392,7 @@ void LittleWolf::send_my_info()
 {
 	Player& p = _players[_curr_player_id];
 
-	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.state);
+	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.state, p.name);
 }
 
 void LittleWolf::killPlayer(std::uint8_t id)
@@ -408,9 +407,9 @@ void LittleWolf::removePlayer(std::uint16_t id)
 	send_my_info();
 }
 
-void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, std::uint8_t state)
+void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, std::uint8_t state, const char name[11])
 {
-
+	
 	Player& p = _players[id];
 
 	p.id = id;
@@ -422,7 +421,11 @@ void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY,
 	p.acceleration = acceleration;
 	p.theta = theta;
 	p.state = static_cast<PlayerState>(state);
-
+	char aux[11];
+	for (int i = 0; i < 11; ++i) {
+		aux[i] = name[i];
+	}
+	Game::Instance()->chars_to_string(p.name, aux);
 	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
 
 }
@@ -635,15 +638,16 @@ void LittleWolf::render_upper_view() {
 void LittleWolf::render_players_info() {
 
 	uint_fast16_t y = 0;
-
+	
 	for (auto i = 0u; i < _max_player; i++) {
 		PlayerState s = _players[i].state;
 
 		// render player info if it is used
 		if (s != NOT_USED) {
-
-			std::string msg = (i == _curr_player_id ? "*P" : " P")
-					+ std::to_string(i) + (s == DEAD ? " (dead)" : "");
+			std::cout << "player existe: " << i << std::endl;
+			std::string msg = (i == _curr_player_id ? "*" : " ")
+				+ std::string(_players[i].name)
+				+ (s == DEAD ? " (dead)" : "");
 
 			Texture info(sdlutils().renderer(), msg,
 					sdlutils().fonts().at("MFR24"),

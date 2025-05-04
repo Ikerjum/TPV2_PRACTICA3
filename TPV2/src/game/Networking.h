@@ -13,7 +13,7 @@ public:
 	Networking();
 	virtual ~Networking();
 
-	bool init(char *host, Uint16 port);
+	bool init(char *host, Uint16 port, std::string& name);
 	bool disconnect();
 	void update();
 
@@ -32,7 +32,7 @@ public:
 	void send_state(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta);
 	void send_my_info(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, uint8_t state);
+		float theta, uint8_t state, std::string name);
 
 	//struct Player {
 	//	uint8_t id;          // the id

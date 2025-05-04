@@ -71,6 +71,7 @@ public:
 	// player information
 	struct Player {
 		uint8_t id;          // the id
+		std::string name;
 		Line fov;            // focal view
 		Point where;         // current position (wrt. to the grid)
 		Point velocity;      // current velocity
@@ -136,7 +137,7 @@ public:
 	void load(std::string filename);
 
 	// add a new player with identifier <id>, returns false if the id is already occupied
-	bool addPlayer(std::uint8_t id);
+	bool addPlayer(std::uint8_t id, std::string& name);
 
 	// initialize the SDL window information
 	void init(SDL_Window *window, SDL_Renderer *render);
@@ -163,7 +164,7 @@ public:
 	void killPlayer(std::uint8_t id);
 	void removePlayer(std::uint16_t id);
 	void update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, std::uint8_t state);
+		float theta, std::uint8_t state,const  char name[11]);
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta);
 	Player* getPlayers() {

@@ -34,7 +34,6 @@ struct MsgWithId: Msg {
 
 struct MsgWithMasterId: MsgWithId {
 	Uint8 _master_id;
-
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,_master_id)
 };
 
@@ -66,7 +65,7 @@ struct PlayerInfoMsg: MsgWithId {
 	//int h;
 	//float rot;
 	//Uint8 state;
-
+	
 	float whereX;
 	float whereY;
 	float velocityX;
@@ -75,9 +74,10 @@ struct PlayerInfoMsg: MsgWithId {
 	float acceleration;
 	float theta;
 	uint8_t state;
+	char name[11];
 
 	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot,state)
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta,state)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta,state, name, 11u)
 
 };
 struct ShootMsg: MsgWithId {

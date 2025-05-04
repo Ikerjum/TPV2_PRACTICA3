@@ -30,11 +30,14 @@ Game::~Game() {
 
 bool Game::initGame(const char *map, char* host, Uint16 port) {
 
-
+	std::string playerName;
+	std::cout << "Enter your name (max 10 chars): ";
+	std::getline(std::cin, playerName);
+	playerName = playerName.substr(0, 10);
 	
 	_net = new Networking();
 
-	if (!_net->init(host, port)) {
+	if (!_net->init(host, port, playerName)) {
 		SDLNetUtils::print_SDLNet_error();
 		return false;
 	}
@@ -71,7 +74,7 @@ bool Game::initGame(const char *map, char* host, Uint16 port) {
 	//_little_wolf->addPlayer(2);
 	//_little_wolf->addPlayer(3);
 
-	_little_wolf->addPlayer(_net->client_id());
+	_little_wolf->addPlayer(_net->client_id(),playerName);
 
 	return true;
 }
