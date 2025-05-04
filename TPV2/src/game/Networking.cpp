@@ -101,6 +101,8 @@ void Networking::update() {
 	ShootMsg m3;
 	MsgWithId m4;
 	PlayerInfoMsg m5;
+	SoundMsg m6;
+	PointsMsg m7;
 
 	while (SDLNetUtils::deserializedReceive(m0, _p, _sock) > 0) {
 		//SE EJECUTA SOLO UNA VEZ
@@ -143,6 +145,14 @@ void Networking::update() {
 			handle_restart();
 			break;
 
+		case _SOUND:
+			m6.deserialize(_p->data);
+			handle_sound(m6);
+			break;
+		case _POINTS:
+			m7.deserialize(_p->data);
+			handle_points(m7);
+			break;
 		default:
 			break;
 		}
@@ -159,7 +169,7 @@ void Networking::handle_disconnet(Uint8 id) {
 }
 
 void Networking::send_state(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-	float theta) {
+	float theta, float fovA1, float fovA2, float fovB1, float fovB2) {
 
 	PlayerStateMsg m;
 
@@ -172,29 +182,34 @@ void Networking::send_state(float whereX, float whereY, float velocityX, float v
 	m.speed = speed;
 	m.acceleration = acceleration;
 	m.theta = theta;
+	m.fovA1 = fovA1;
+	m.fovA2 = fovA2;
+	m.fovB1 = fovB1;
+	m.fovB2 = fovB2;
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
 void Networking::handle_player_state(const PlayerStateMsg &m) {
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_state(m._client_id, m.whereX, m.whereY,
-			m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta);
+			m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2);
 	}
 }
 
-void Networking::send_shoot(Uint8 id, int hit) {
+void Networking::send_shoot(Uint8 shooterId) {
 	ShootMsg m;
 	m._type = _SHOOT;
-	m._client_id = id;
-	m.hit = hit;
+	m._client_id = shooterId;
+
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
 void Networking::handle_shoot(const ShootMsg &m) {
 	if (is_master()) {
-		Game::Instance()->get_littleWolf().checkCollisions(m._client_id,m.hit);
-		if (m.hit == 1) {
-			send_dead(m._client_id);
+		
+		if (Game::Instance()->get_littleWolf().checkCollisions(m._client_id)) {
+			
+			send_points(m._client_id);
 		}
 	}
 }
@@ -212,7 +227,7 @@ void Networking::handle_dead(const MsgWithId &m) {
 }
 
 void Networking::send_my_info(float whereX,float whereY, float velocityX, float velocityY, float speed, float acceleration,
-	float theta, uint8_t state, std::string name) {
+	float theta, float fovA1, float fovA2, float fovB1, float fovB2, uint8_t state, std::string name, int points) {
 
 	PlayerInfoMsg m;
 
@@ -225,7 +240,12 @@ void Networking::send_my_info(float whereX,float whereY, float velocityX, float 
 	m.speed = speed;
 	m.acceleration = acceleration;
 	m.theta = theta;
+	m.fovA1 = fovA1;
+	m.fovA2 = fovA2;
+	m.fovB1 = fovB1;
+	m.fovB2 = fovB2;
 	m.state = state;
+	m.points = points;
 	Game::Instance()->string_to_chars(name, m.name);
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
@@ -233,7 +253,7 @@ void Networking::send_my_info(float whereX,float whereY, float velocityX, float 
 void Networking::handle_player_info(const PlayerInfoMsg &m) {
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_info(m._client_id, m.whereX, m.whereY,
-				m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.state, m.name);
+				m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2, m.state, m.name, m.points);
 	}
 }
 
@@ -256,8 +276,18 @@ void Networking::send_sound(Uint8 SoundType, float X, float Y)
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
+void Networking::send_points(Uint8 id)
+{
+	PointsMsg m;
+	m._type = _POINTS;
+	m._client_id = id;
+	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
+}
+
 void Networking::handle_restart() { //Se comprueba si es el master antes de esto
+	
 	Game::Instance()->get_littleWolf().RestartAll();
+	
 	Game::Instance()->get_littleWolf().setBeginTimerToRestart(false); //Necesario porque sino se ejecuta dos veces
 	Game::Instance()->get_littleWolf().setTimerToRestart(0); //Necesario porque sino se ejecuta dos veces
 }
@@ -269,4 +299,10 @@ void Networking::handle_sound(const SoundMsg& m)
 		LittleWolf::Point point = { m.originX, m.originY };
 		Game::Instance()->get_littleWolf().playSound(point, m.soundType);
 	}
+}
+
+void Networking::handle_points(const PointsMsg& m)
+{
+	std::cout << "HANDLE_POINTS" << std::endl;
+	Game::Instance()->get_littleWolf().managePoints(m._client_id);
 }

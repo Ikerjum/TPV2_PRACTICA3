@@ -17,7 +17,8 @@ enum MsgType : Uint8 {
 	_SHOOT, //
 	_DEAD, //
 	_RESTART, 
-	_SOUND
+	_SOUND,
+	_POINTS
 };
 
 struct Msg {
@@ -52,9 +53,12 @@ struct PlayerStateMsg: MsgWithId {
 	float speed;
 	float acceleration;
 	float theta;
-
+	float fovA1;
+	float fovA2;
+	float fovB1;
+	float fovB2;
 	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot)
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, whereX, whereY, velocityX, velocityY, speed, acceleration, theta)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, whereX, whereY, velocityX, velocityY, speed, acceleration, theta, fovA1, fovA2, fovB1, fovB2)
 };
 
 struct PlayerInfoMsg: MsgWithId {
@@ -73,13 +77,19 @@ struct PlayerInfoMsg: MsgWithId {
 	float speed;
 	float acceleration;
 	float theta;
+	float fovA1;
+	float fovA2;
+	float fovB1;
+	float fovB2;
 	uint8_t state;
 	char name[11];
+	int points;
 
 	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot,state)
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta,state, name, 11u)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta, fovA1, fovA2, fovB1, fovB2, state, name, 11u, points)
 
 };
+
 struct ShootMsg: MsgWithId {
 
 	//float x;
@@ -89,12 +99,10 @@ struct ShootMsg: MsgWithId {
 	//int w;
 	//int h;
 	//float rot;
-
-	int hit;
 	//NO SE PUEDE CON BOOLEANOS
 
 	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,vx,vy,w,h,rot)
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, hit)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId)
 
 };
 
@@ -104,4 +112,8 @@ struct SoundMsg : MsgWithId {
 	float originY;
 
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, soundType, originX, originY)
+};
+
+struct PointsMsg : MsgWithId {
+	
 };

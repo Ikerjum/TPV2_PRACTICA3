@@ -33,16 +33,51 @@ LittleWolf::~LittleWolf() {
 	// nothing to delete, the walling are delete in the Map's destructor
 }
 
-void LittleWolf::checkCollisions(std::uint8_t id, int hit)
+bool LittleWolf::checkCollisions(std::uint8_t id)
 {
-	if (hit == 1) {
-		getPlayers()[id].state = DEAD;
+	
+
+	Player& p = _players[id];
+
+	for (float d = -0.05; d <= 0.05; d += 0.005) {
+		
+		// search which tile was hit
+		const Line camera = rotate(p.fov, p.theta + d);
+		
+		Point direction = lerp(camera, 0.5f);
+		direction.x = direction.x / mag(direction);
+		direction.y = direction.y / mag(direction);
+		std::cout << p.where.x  << " " << p.where.y << std::endl;
+		std::cout << direction.x << " " << direction.y << std::endl;
+		std::cout << (int)_map.walling << std::endl;
+		const Hit hit = cast(p.where, direction, _map.walling, false, true);
+		
+#ifdef _DEBUG
+		printf(
+			"Shoot by player %d hit a tile with value %d! at distance %f\n",
+			p.id, hit.tile, mag(sub(p.where, hit.where)));
+#endif
+
+		// if we hit a tile with a player id and the distance from that tile is smaller
+		// than shoot_distace, we mark the player as dead
+
+		if (hit.tile > 9 && mag(sub(p.where, hit.where)) < _shoot_distace) {
+			
+			uint8_t id = tile_to_player(hit.tile);
+			playSound(hit.where, 1);
+
+			Game::Instance()->get_networking().send_sound(1, _players[_curr_player_id].where.x, _players[_curr_player_id].where.y);
+			Game::Instance()->get_networking().send_dead(id);
+			return true;
+		}
+
 	}
+	return false;
 }
 
 void LittleWolf::RestartAll()
 {
-
+	bringAllToLife();
 	for (auto i = 0u; i < _max_player; i++) {
 
 		if (_players[i].state != NOT_USED)
@@ -73,9 +108,10 @@ void LittleWolf::RestartAll()
 			_players[i].where.y = row + 0.5f; // where to put the player
 			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = player_to_tile(playerId);
 
-			bringAllToLife();
+			
 		}
 	}
+	
 }
 
 bool LittleWolf::RegisterMoreThanTwoLifes()
@@ -148,7 +184,7 @@ void LittleWolf::update() {
 				timerToRestart = sdlutils().currRealTime() + 5000;
 				beginTimerToRestart = true;
 			}
-			std::cout << "timerToRestart: " << timerToRestart - sdlutils().currRealTime() << std::endl;
+		//	std::cout << "timerToRestart: " << timerToRestart - sdlutils().currRealTime() << std::endl;
 		}
 	}
 
@@ -171,7 +207,7 @@ void LittleWolf::update() {
 	shoot(p); // handle shooting
 
 	Game::Instance()->get_networking().send_state(p.where.x, p.where.y, p.velocity.x, p.velocity.y, p.speed, p.acceleration,
-		p.theta);
+		p.theta, p.fov.a.x, p.fov.a.y, p.fov.b.x, p.fov.b.y);
 
 }
 
@@ -354,13 +390,15 @@ bool LittleWolf::addPlayer(std::uint8_t id, std::string& name) {
 	Player p = { //
 			id, //
 			name,
+			0,
 					viewport(0.8f), // focal
 					{ col + 0.5f, row + 0.5f }, // Where.
 					{ 0.0f, 0.0f }, 			// Velocity.
 					2.0f, 			// Speed.
 					0.9f, 			// Acceleration.
 					0.0f, 			// Rotation angle in radians.
-					ALIVE 			// Player state
+					ALIVE 			// Player state,
+					
 			};
 	// not that player <id> is stored in the map as player_to_tile(id) -- which is id+10
 	_map.walling[(int) p.where.y][(int) p.where.x] = player_to_tile(id);
@@ -388,11 +426,18 @@ void LittleWolf::playSound(Point where, Uint8 sound)
 	}
 }
 
+void LittleWolf::managePoints(Uint8 id)
+{
+	Player& p = _players[id];
+	p.points += 1;
+	
+}
+
 void LittleWolf::send_my_info()
 {
 	Player& p = _players[_curr_player_id];
 
-	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.state, p.name);
+	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.fov.a.x,p.fov.a.y,p.fov.b.x,p.fov.b.y,p.state, p.name, p.points);
 }
 
 void LittleWolf::killPlayer(std::uint8_t id)
@@ -407,7 +452,7 @@ void LittleWolf::removePlayer(std::uint16_t id)
 	send_my_info();
 }
 
-void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, std::uint8_t state, const char name[11])
+void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, float fovA1, float fovA2, float fovB1, float fovB2, std::uint8_t state, const char name[11], int points)
 {
 	
 	Player& p = _players[id];
@@ -420,17 +465,23 @@ void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY,
 	p.speed = speed;
 	p.acceleration = acceleration;
 	p.theta = theta;
+	p.fov.a.x = fovA1;
+	p.fov.a.y = fovA2;
+	p.fov.b.x = fovB1;
+	p.fov.b.y = fovB2;
 	p.state = static_cast<PlayerState>(state);
+	p.points = points;
 	char aux[11];
 	for (int i = 0; i < 11; ++i) {
 		aux[i] = name[i];
 	}
 	Game::Instance()->chars_to_string(p.name, aux);
+	std::cout << "name updated: " << p.name << std::endl;
 	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
 
 }
 
-void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta)
+void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, float fovA1, float fovA2, float fovB1, float fovB2)
 {
 	Player& p = _players[id];
 	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
@@ -443,6 +494,10 @@ void LittleWolf::update_player_state(std::uint8_t id, float whereX, float whereY
 	p.speed = speed;
 	p.acceleration = acceleration;
 	p.theta = theta;
+	p.fov.a.x = fovA1;
+	p.fov.a.y = fovA2;
+	p.fov.b.x = fovB1;
+	p.fov.b.y = fovB2;
 
 	_map.walling[(int)p.where.y][(int)p.where.x] = player_to_tile(id);
 }
@@ -644,9 +699,9 @@ void LittleWolf::render_players_info() {
 
 		// render player info if it is used
 		if (s != NOT_USED) {
-			std::cout << "player existe: " << i << std::endl;
 			std::string msg = (i == _curr_player_id ? "*" : " ")
 				+ std::string(_players[i].name)
+				+ ( " points: " + std::to_string(_players[i].points))
 				+ (s == DEAD ? " (dead)" : "");
 
 			Texture info(sdlutils().renderer(), msg,
@@ -743,56 +798,17 @@ void LittleWolf::spin(Player &p) {
 bool LittleWolf::shoot(Player &p) {
 	auto &ihdlr = ih();
 
-	int damage = 0;
-
 	// Space shoot -- we use keyDownEvent to force a complete press/release for each bullet
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_SPACE)) {
 		
 		// play gun shot sound
 		sdlutils().soundEffects().at("gunshot").play();
 		
-		SoundMsg m;
-		m._type = _SOUND;
-		m._client_id = _curr_player_id;
-		m.soundType = 0;
-		m.originX = _players[_curr_player_id].where.x;
-		m.originY = _players[_curr_player_id].where.y;
+		Game::Instance()->get_networking().send_sound(0, _players[_curr_player_id].where.x, _players[_curr_player_id].where.y);
 
+		Game::Instance()->get_networking().send_shoot(p.id);
 		// we shoot in several directions, because with projection what you see is not exact
-		for (float d = -0.05; d <= 0.05; d += 0.005) {
-
-			// search which tile was hit
-			const Line camera = rotate(p.fov, p.theta + d);
-			Point direction = lerp(camera, 0.5f);
-			direction.x = direction.x / mag(direction);
-			direction.y = direction.y / mag(direction);
-			const Hit hit = cast(p.where, direction, _map.walling, false, true);
-
-#ifdef _DEBUG
-			printf(
-					"Shoot by player %d hit a tile with value %d! at distance %f\n",
-					p.id, hit.tile, mag(sub(p.where, hit.where)));
-#endif
-
-			// if we hit a tile with a player id and the distance from that tile is smaller
-			// than shoot_distace, we mark the player as dead
-			if (hit.tile > 9 && mag(sub(p.where, hit.where)) < _shoot_distace) {
-				uint8_t id = tile_to_player(hit.tile);
-				_players[id].state = DEAD;
-				playSound(hit.where, 1);
-				
-				SoundMsg m;
-				m._type = _SOUND;
-				m._client_id = _curr_player_id;
-				m.soundType = 1;
-				m.originX = _players[_curr_player_id].where.x;
-				m.originY = _players[_curr_player_id].where.y;
-				
-				damage = 1;
-				Game::Instance()->get_networking().send_shoot(_players[id].id, damage);
-				return true;
-			}
-		}
+		
 	}
 	
 	return false;

@@ -72,6 +72,7 @@ public:
 	struct Player {
 		uint8_t id;          // the id
 		std::string name;
+		int points;
 		Line fov;            // focal view
 		Point where;         // current position (wrt. to the grid)
 		Point velocity;      // current velocity
@@ -79,6 +80,7 @@ public:
 		float acceleration;  // acceleration
 		float theta;         // rotation (in rad)
 		PlayerState state;   // the state
+		
 	};
 
 	// Representing a map, the user_walling is the walling provided by the user, and
@@ -159,18 +161,19 @@ public:
 	//EDITABLE
 
 	void playSound(Point where, Uint8 sound);
+	void managePoints(Uint8 id);
 
 	void send_my_info();
 	void killPlayer(std::uint8_t id);
 	void removePlayer(std::uint16_t id);
 	void update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, std::uint8_t state,const  char name[11]);
+		float theta, float fovA1, float fovA2, float fovB1, float fovB2, std::uint8_t state,const  char name[11], int points);
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta);
+		float theta, float fovA1, float fovA2, float fovB1, float fovB2);
 	Player* getPlayers() {
 		return _players;
 	}
-	void checkCollisions(std::uint8_t id, int hit);
+	bool checkCollisions(std::uint8_t id);
 	void RestartAll();
 	bool RegisterMoreThanTwoLifes();
 	int getPlayersUsed();

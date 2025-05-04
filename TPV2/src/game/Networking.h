@@ -30,9 +30,9 @@ public:
 	//		Uint8 state);
 
 	void send_state(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta);
+		float theta, float fovA1, float fovA2, float fovB1, float fovB2);
 	void send_my_info(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, uint8_t state, std::string name);
+		float theta, float fovA1, float fovA2, float fovB1, float fovB2, uint8_t state, std::string name, int points);
 
 	//struct Player {
 	//	uint8_t id;          // the id
@@ -46,12 +46,14 @@ public:
 	//};
 	
 	//void send_shoot(Vector2D p, Vector2D v, int width, int height, float r);
-	void send_shoot(Uint8 id, int hit);
+	void send_shoot(Uint8 shooterId);
 	//void send_shoot(Vector2D p);
 	void send_dead(Uint8 id);
 	void send_restart();
 
 	void send_sound(Uint8 soundType, float X, float Y);
+
+	void send_points(Uint8 id);
 
 private:
 
@@ -64,6 +66,7 @@ private:
 	void handle_restart();
 
 	void handle_sound(const SoundMsg &m);
+	void handle_points(const PointsMsg& m);
 
 	UDPsocket _sock;
 	SDLNet_SocketSet _socketSet;
