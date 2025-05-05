@@ -116,7 +116,7 @@ void LittleWolf::RestartAll()
 			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = player_to_tile(playerId);
 			_players[i].health = 100;
 			seeMap = false;
-			
+
 		}
 	}
 	
@@ -197,11 +197,11 @@ void LittleWolf::update() {
 	}
 
 	if (timerToRestart != 0 && sdlutils().currRealTime() > timerToRestart && beginTimerToRestart) {
-		Game::Instance()->get_networking().send_restart();
-		//RestartAll();
-		std::cout << "llamo al restart desde " << (int)_curr_player_id << std::endl;
 		timerToRestart = 0;
 		beginTimerToRestart = false;
+		std::cout << "llamo al restart desde " << (int)_curr_player_id << std::endl;
+		Game::Instance()->get_networking().send_restart();
+
 		return;
 	}
 	
