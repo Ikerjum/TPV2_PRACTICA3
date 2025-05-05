@@ -110,7 +110,8 @@ void LittleWolf::RestartAll()
 			_players[i].where.x = col + 0.5f; // where to put the player
 			_players[i].where.y = row + 0.5f; // where to put the player
 			_map.walling[(int)_players[i].where.y][(int)_players[i].where.x] = player_to_tile(playerId);
-
+			_players[i].health = 100;
+			seeMap = false;
 			
 		}
 	}

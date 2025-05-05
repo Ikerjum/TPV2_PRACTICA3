@@ -333,6 +333,8 @@ void Networking::send_health(Uint8 id, int distance, Uint8 shooterId)
 
 void Networking::handle_restart() { //Se comprueba si es el master antes de esto
 	
+	if(is_master())
+	std::cout << "llamo restart" << std::endl;
 	Game::Instance()->get_littleWolf().RestartAll();
 	
 	Game::Instance()->get_littleWolf().setBeginTimerToRestart(false); //Necesario porque sino se ejecuta dos veces
