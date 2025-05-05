@@ -82,11 +82,13 @@ bool LittleWolf::checkCollisions(std::uint8_t id)
 
 void LittleWolf::RestartAll()
 {
+	
 	bringAllToLife();
 	for (auto i = 0u; i < _max_player; i++) {
 
 		if (_players[i].state != NOT_USED)
 		{
+			std::cout << "bucle for player: " << i << std::endl;
 			uint8_t playerId = _players[i].id;
 			auto& rand = sdlutils().rand();
 			// The search for an empty cell start at a random position (orow,ocol)
