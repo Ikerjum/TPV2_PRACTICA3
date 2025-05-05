@@ -19,7 +19,8 @@ enum MsgType : Uint8 {
 	_RESTART, 
 	_SOUND,
 	_POINTS,
-	_PLAYER_CORRECTION
+	_PLAYER_CORRECTION,
+	_HEALTH
 };
 
 struct Msg {
@@ -85,9 +86,10 @@ struct PlayerInfoMsg: MsgWithId {
 	uint8_t state;
 	char name[11];
 	int points;
+	int health;
 
 	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot,state)
-	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta, fovA1, fovA2, fovB1, fovB2, state, name, 11u, points)
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta, fovA1, fovA2, fovB1, fovB2, state, name, 11u, points, health)
 
 };
 
@@ -132,4 +134,10 @@ struct PlayerCorrectionMsg : MsgWithId {
 	float fovB1;
 	float fovB2;
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, whereX, whereY, velocityX, velocityY, speed, acceleration, theta, fovA1, fovA2, fovB1, fovB2)
+};
+
+struct HealthMsg : MsgWithId {
+	int distance;
+	uint8_t shooter;
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, distance, shooter)
 };

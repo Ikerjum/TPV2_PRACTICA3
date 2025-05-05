@@ -143,5 +143,8 @@
     <ClInclude Include="..\src\game\Networking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\game\LittleWolf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

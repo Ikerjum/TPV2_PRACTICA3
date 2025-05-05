@@ -104,6 +104,7 @@ void Networking::update() {
 	SoundMsg m6;
 	PointsMsg m7;
 	PlayerCorrectionMsg m8;
+	HealthMsg m9;
 
 	while (SDLNetUtils::deserializedReceive(m0, _p, _sock) > 0) {
 		//SE EJECUTA SOLO UNA VEZ
@@ -157,6 +158,10 @@ void Networking::update() {
 		case _PLAYER_CORRECTION:
 			m8.deserialize(_p->data);
 			handle_player_correction(m8);
+			break;
+		case _HEALTH :
+			m9.deserialize(_p->data);
+			handle_health(m9);
 			break;
 		default:
 			break;
@@ -239,10 +244,8 @@ void Networking::send_shoot(Uint8 shooterId) {
 void Networking::handle_shoot(const ShootMsg &m) {
 	if (is_master()) {
 		
-		if (Game::Instance()->get_littleWolf().checkCollisions(m._client_id)) {
+		Game::Instance()->get_littleWolf().checkCollisions(m._client_id);
 			
-			send_points(m._client_id);
-		}
 	}
 }
 
@@ -259,7 +262,7 @@ void Networking::handle_dead(const MsgWithId &m) {
 }
 
 void Networking::send_my_info(float whereX,float whereY, float velocityX, float velocityY, float speed, float acceleration,
-	float theta, float fovA1, float fovA2, float fovB1, float fovB2, uint8_t state, std::string name, int points) {
+	float theta, float fovA1, float fovA2, float fovB1, float fovB2, uint8_t state, std::string name, int points, int health) {
 
 	PlayerInfoMsg m;
 
@@ -278,6 +281,7 @@ void Networking::send_my_info(float whereX,float whereY, float velocityX, float 
 	m.fovB2 = fovB2;
 	m.state = state;
 	m.points = points;
+	m.health = health;
 	Game::Instance()->string_to_chars(name, m.name);
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
@@ -285,7 +289,7 @@ void Networking::send_my_info(float whereX,float whereY, float velocityX, float 
 void Networking::handle_player_info(const PlayerInfoMsg &m) {
 	if (m._client_id != _clientId) {
 		Game::Instance()->get_littleWolf().update_player_info(m._client_id, m.whereX, m.whereY,
-				m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2, m.state, m.name, m.points);
+				m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2, m.state, m.name, m.points, m.health);
 	}
 }
 
@@ -316,6 +320,17 @@ void Networking::send_points(Uint8 id)
 	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
 }
 
+void Networking::send_health(Uint8 id, int distance, Uint8 shooterId)
+{
+	HealthMsg m;
+	m._type = _HEALTH;
+	m._client_id = id;
+	m.distance = distance;
+	m.shooter = shooterId;
+	SDLNetUtils::serializedSend(m, _p, _sock, _srvadd);
+
+}
+
 void Networking::handle_restart() { //Se comprueba si es el master antes de esto
 	
 	Game::Instance()->get_littleWolf().RestartAll();
@@ -335,7 +350,7 @@ void Networking::handle_sound(const SoundMsg& m)
 
 void Networking::handle_points(const PointsMsg& m)
 {
-	std::cout << "HANDLE_POINTS" << std::endl;
+	
 	Game::Instance()->get_littleWolf().managePoints(m._client_id);
 }
 
@@ -348,4 +363,15 @@ void Networking::handle_player_correction(const PlayerCorrectionMsg& m)
 		m.speed, m.acceleration,
 		m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2
 	);
+}
+
+void Networking::handle_health(const HealthMsg& m)
+{
+	if (m._client_id != _clientId) {
+		if (Game::Instance()->get_littleWolf().getDamage(m._client_id, 100 - m.distance)) {
+			std::cout << "muerte" << std::endl;
+			send_points(m.shooter);
+			send_dead(m._client_id);
+		}
+	}
 }

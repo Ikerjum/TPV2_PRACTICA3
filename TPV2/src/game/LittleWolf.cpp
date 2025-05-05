@@ -67,7 +67,10 @@ bool LittleWolf::checkCollisions(std::uint8_t id)
 			playSound(hit.where, 1);
 
 			Game::Instance()->get_networking().send_sound(1, _players[_curr_player_id].where.x, _players[_curr_player_id].where.y);
-			Game::Instance()->get_networking().send_dead(id);
+			
+			int distance = mag(sub(p.where, hit.where));
+			Game::Instance()->get_networking().send_health(id, distance, p.id);
+			
 			return true;
 		}
 
@@ -390,6 +393,7 @@ bool LittleWolf::addPlayer(std::uint8_t id, std::string& name) {
 	Player p = { //
 			id, //
 			name,
+			100,
 			0,
 					viewport(0.8f), // focal
 					{ col + 0.5f, row + 0.5f }, // Where.
@@ -448,11 +452,23 @@ bool LittleWolf::validate_movement(uint8_t id, float newX, float newY)
 	return (tile == 0 || tile == player_to_tile(id));
 }
 
+bool LittleWolf::getDamage(Uint8 id, int damage)
+{
+	Player& p = _players[id];
+	p.health -= damage;
+	
+	if (p.health <= 0) {
+		p.health = 0;
+		return true;
+	}
+	return false;
+}
+
 void LittleWolf::send_my_info()
 {
 	Player& p = _players[_curr_player_id];
 
-	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.fov.a.x,p.fov.a.y,p.fov.b.x,p.fov.b.y,p.state, p.name, p.points);
+	Game::Instance()->get_networking().send_my_info(p.where.x,p.where.y,p.velocity.x,p.velocity.y,p.speed,p.acceleration,p.theta,p.fov.a.x,p.fov.a.y,p.fov.b.x,p.fov.b.y,p.state, p.name, p.points, p.health);
 }
 
 void LittleWolf::killPlayer(std::uint8_t id)
@@ -467,7 +483,7 @@ void LittleWolf::removePlayer(std::uint16_t id)
 	send_my_info();
 }
 
-void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, float fovA1, float fovA2, float fovB1, float fovB2, std::uint8_t state, const char name[11], int points)
+void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration, float theta, float fovA1, float fovA2, float fovB1, float fovB2, std::uint8_t state, const char name[11], int points, int health)
 {
 	
 	Player& p = _players[id];
@@ -486,6 +502,7 @@ void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY,
 	p.fov.b.y = fovB2;
 	p.state = static_cast<PlayerState>(state);
 	p.points = points;
+	p.health = health;
 	char aux[11];
 	for (int i = 0; i < 11; ++i) {
 		aux[i] = name[i];
@@ -717,6 +734,7 @@ void LittleWolf::render_players_info() {
 			std::string msg = (i == _curr_player_id ? "*" : " ")
 				+ std::string(_players[i].name)
 				+ ( " points: " + std::to_string(_players[i].points))
+				+ ( " health: " + std::to_string(_players[i].health))
 				+ (s == DEAD ? " (dead)" : "");
 
 			Texture info(sdlutils().renderer(), msg,

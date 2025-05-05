@@ -72,6 +72,7 @@ public:
 	struct Player {
 		uint8_t id;          // the id
 		std::string name;
+		int health;
 		int points;
 		Line fov;            // focal view
 		Point where;         // current position (wrt. to the grid)
@@ -163,13 +164,13 @@ public:
 	void playSound(Point where, Uint8 sound);
 	void managePoints(Uint8 id);
 	bool validate_movement(uint8_t id, float newX, float newY);
-
+	bool getDamage(Uint8 id, int damage);
 
 	void send_my_info();
 	void killPlayer(std::uint8_t id);
 	void removePlayer(std::uint16_t id);
 	void update_player_info(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, float fovA1, float fovA2, float fovB1, float fovB2, std::uint8_t state,const  char name[11], int points);
+		float theta, float fovA1, float fovA2, float fovB1, float fovB2, std::uint8_t state,const  char name[11], int points, int health);
 	void update_player_state(std::uint8_t id, float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta, float fovA1, float fovA2, float fovB1, float fovB2);
 	Player* getPlayers() {

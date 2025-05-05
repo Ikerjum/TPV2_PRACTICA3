@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game\Game.h" />
+    <ClInclude Include="..\src\game\LittleWolf.h" />
     <ClInclude Include="..\src\game\Networking.h" />
     <ClInclude Include="..\src\game\netwrok_messages.h" />
     <ClInclude Include="..\src\game\UDPServer.h" />

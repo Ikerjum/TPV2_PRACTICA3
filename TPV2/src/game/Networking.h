@@ -32,7 +32,7 @@ public:
 	void send_state(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
 		float theta, float fovA1, float fovA2, float fovB1, float fovB2);
 	void send_my_info(float whereX, float whereY, float velocityX, float velocityY, float speed, float acceleration,
-		float theta, float fovA1, float fovA2, float fovB1, float fovB2, uint8_t state, std::string name, int points);
+		float theta, float fovA1, float fovA2, float fovB1, float fovB2, uint8_t state, std::string name, int points, int health);
 
 	//struct Player {
 	//	uint8_t id;          // the id
@@ -55,6 +55,8 @@ public:
 
 	void send_points(Uint8 id);
 
+	void send_health(Uint8 id, int distance, Uint8 shooterId);
+
 private:
 
 	void handle_new_client(Uint8 id);
@@ -68,6 +70,7 @@ private:
 	void handle_sound(const SoundMsg &m);
 	void handle_points(const PointsMsg& m);
 	void handle_player_correction(const PlayerCorrectionMsg& m);
+	void handle_health(const HealthMsg& m);
 
 	UDPsocket _sock;
 	SDLNet_SocketSet _socketSet;
