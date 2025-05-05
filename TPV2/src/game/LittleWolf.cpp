@@ -88,7 +88,6 @@ void LittleWolf::RestartAll()
 
 		if (_players[i].state != NOT_USED)
 		{
-			std::cout << "bucle for player: " << i << std::endl;
 			uint8_t playerId = _players[i].id;
 			auto& rand = sdlutils().rand();
 			// The search for an empty cell start at a random position (orow,ocol)
@@ -125,7 +124,6 @@ void LittleWolf::RestartAll()
 bool LittleWolf::RegisterMoreThanTwoLifes()
 {
 	int num_alive = 0;
-
 	for (auto i = 0u; i < _max_player; i++) {
 		if (_players[i].state == ALIVE) {
 			num_alive++;
@@ -199,7 +197,7 @@ void LittleWolf::update() {
 	if (timerToRestart != 0 && sdlutils().currRealTime() > timerToRestart && beginTimerToRestart) {
 		timerToRestart = 0;
 		beginTimerToRestart = false;
-		std::cout << "llamo al restart desde " << (int)_curr_player_id << std::endl;
+		
 		Game::Instance()->get_networking().send_restart();
 
 		return;
@@ -847,7 +845,6 @@ bool LittleWolf::shoot(Player &p) {
 		Game::Instance()->get_networking().send_sound(0, _players[_curr_player_id].where.x, _players[_curr_player_id].where.y);
 
 		Game::Instance()->get_networking().send_shoot(p.id);
-		// we shoot in several directions, because with projection what you see is not exact
 		
 	}
 	
@@ -870,7 +867,7 @@ void LittleWolf::bringAllToLife() {
 	// bring all dead players to life -- all stay in the same position
 	for (auto i = 0u; i < _max_player; i++) {
 		if (_players[i].state == DEAD) {
-			_players[i].state = ALIVE;
+			_players[i].state = ALIVE;		
 		}
 	}
 }

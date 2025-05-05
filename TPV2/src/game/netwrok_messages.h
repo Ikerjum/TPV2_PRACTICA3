@@ -42,11 +42,7 @@ struct MsgWithMasterId: MsgWithId {
 
 struct PlayerStateMsg: MsgWithId {
 
-	//float x;
-	//float y;
-	//int w;
-	//int h;
-	//float rot;
+
 
 	float whereX;
 	float whereY;
@@ -59,18 +55,13 @@ struct PlayerStateMsg: MsgWithId {
 	float fovA2;
 	float fovB1;
 	float fovB2;
-	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot)
+
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, whereX, whereY, velocityX, velocityY, speed, acceleration, theta, fovA1, fovA2, fovB1, fovB2)
 };
 
 struct PlayerInfoMsg: MsgWithId {
 
-	//float x;
-	//float y;
-	//int w;
-	//int h;
-	//float rot;
-	//Uint8 state;
+
 	
 	float whereX;
 	float whereY;
@@ -88,23 +79,11 @@ struct PlayerInfoMsg: MsgWithId {
 	int points;
 	int health;
 
-	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,w,h,rot,state)
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId,whereX, whereY,velocityX, velocityY,speed,acceleration,theta, fovA1, fovA2, fovB1, fovB2, state, name, 11u, points, health)
 
 };
 
 struct ShootMsg: MsgWithId {
-
-	//float x;
-	//float y;
-	//float vx;
-	//float vy;
-	//int w;
-	//int h;
-	//float rot;
-	//NO SE PUEDE CON BOOLEANOS
-
-	//_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, x,y,vx,vy,w,h,rot)
 	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId)
 
 };
@@ -118,7 +97,7 @@ struct SoundMsg : MsgWithId {
 };
 
 struct PointsMsg : MsgWithId {
-	
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId)
 };
 
 struct PlayerCorrectionMsg : MsgWithId {
