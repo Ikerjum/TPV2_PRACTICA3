@@ -18,7 +18,8 @@ enum MsgType : Uint8 {
 	_DEAD, //
 	_RESTART, 
 	_SOUND,
-	_POINTS
+	_POINTS,
+	_PLAYER_CORRECTION
 };
 
 struct Msg {
@@ -116,4 +117,19 @@ struct SoundMsg : MsgWithId {
 
 struct PointsMsg : MsgWithId {
 	
+};
+
+struct PlayerCorrectionMsg : MsgWithId {
+	float whereX;
+	float whereY;
+	float velocityX;
+	float velocityY;
+	float speed;
+	float acceleration;
+	float theta;
+	float fovA1;
+	float fovA2;
+	float fovB1;
+	float fovB2;
+	_IMPL_SERIALIAZION_WITH_BASE_(MsgWithId, whereX, whereY, velocityX, velocityY, speed, acceleration, theta, fovA1, fovA2, fovB1, fovB2)
 };

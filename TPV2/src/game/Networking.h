@@ -67,6 +67,7 @@ private:
 
 	void handle_sound(const SoundMsg &m);
 	void handle_points(const PointsMsg& m);
+	void handle_player_correction(const PlayerCorrectionMsg& m);
 
 	UDPsocket _sock;
 	SDLNet_SocketSet _socketSet;

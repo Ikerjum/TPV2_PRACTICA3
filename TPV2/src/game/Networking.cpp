@@ -103,6 +103,7 @@ void Networking::update() {
 	PlayerInfoMsg m5;
 	SoundMsg m6;
 	PointsMsg m7;
+	PlayerCorrectionMsg m8;
 
 	while (SDLNetUtils::deserializedReceive(m0, _p, _sock) > 0) {
 		//SE EJECUTA SOLO UNA VEZ
@@ -153,6 +154,10 @@ void Networking::update() {
 			m7.deserialize(_p->data);
 			handle_points(m7);
 			break;
+		case _PLAYER_CORRECTION:
+			m8.deserialize(_p->data);
+			handle_player_correction(m8);
+			break;
 		default:
 			break;
 		}
@@ -191,7 +196,34 @@ void Networking::send_state(float whereX, float whereY, float velocityX, float v
 
 void Networking::handle_player_state(const PlayerStateMsg &m) {
 	if (m._client_id != _clientId) {
-		Game::Instance()->get_littleWolf().update_player_state(m._client_id, m.whereX, m.whereY,
+		LittleWolf& lw = Game::Instance()->get_littleWolf();
+		if (is_master()) {
+			bool isValid = lw.validate_movement(m._client_id, m.whereX, m.whereY);
+
+			
+			if (!isValid) {
+				auto p = lw.getPlayers()[m._client_id];
+				PlayerCorrectionMsg corr;
+				corr._type = _PLAYER_CORRECTION;
+				corr._client_id = m._client_id;
+				corr.whereX = p.where.x; 
+				corr.whereY = p.where.y;
+				corr.velocityX = p.velocity.x;
+				corr.velocityY = p.velocity.y;
+				corr.speed = p.speed;
+				corr.acceleration = p.acceleration;
+				corr.theta = p.theta;
+				corr.fovA1 = p.fov.a.x;
+				corr.fovA2 = p.fov.a.y;
+				corr.fovB1 = p.fov.b.x;
+				corr.fovB2 = p.fov.b.y;
+				SDLNetUtils::serializedSend(corr, _p, _sock, _srvadd);
+				return; 
+			}
+		}
+
+		
+		lw.update_player_state(m._client_id, m.whereX, m.whereY,
 			m.velocityX, m.velocityY, m.speed, m.acceleration, m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2);
 	}
 }
@@ -305,4 +337,15 @@ void Networking::handle_points(const PointsMsg& m)
 {
 	std::cout << "HANDLE_POINTS" << std::endl;
 	Game::Instance()->get_littleWolf().managePoints(m._client_id);
+}
+
+void Networking::handle_player_correction(const PlayerCorrectionMsg& m)
+{
+	Game::Instance()->get_littleWolf().update_player_state(
+		m._client_id,
+		m.whereX, m.whereY,
+		m.velocityX, m.velocityY,
+		m.speed, m.acceleration,
+		m.theta, m.fovA1, m.fovA2, m.fovB1, m.fovB2
+	);
 }

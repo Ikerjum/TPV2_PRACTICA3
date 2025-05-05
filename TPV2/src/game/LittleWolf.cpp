@@ -433,6 +433,21 @@ void LittleWolf::managePoints(Uint8 id)
 	
 }
 
+bool LittleWolf::validate_movement(uint8_t id, float newX, float newY)
+{
+	//walls
+	int tileX = static_cast<int>(newX);
+	int tileY = static_cast<int>(newY);
+
+	//out of map
+	if (tileX < 0 || tileY < 0 || tileX >= _map.walling_width || tileY >= _map.walling_height)
+		return false;
+
+	//colision with wall or player
+	uint8_t tile = _map.walling[tileY][tileX];
+	return (tile == 0 || tile == player_to_tile(id));
+}
+
 void LittleWolf::send_my_info()
 {
 	Player& p = _players[_curr_player_id];

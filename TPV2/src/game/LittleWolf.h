@@ -162,6 +162,8 @@ public:
 
 	void playSound(Point where, Uint8 sound);
 	void managePoints(Uint8 id);
+	bool validate_movement(uint8_t id, float newX, float newY);
+
 
 	void send_my_info();
 	void killPlayer(std::uint8_t id);
