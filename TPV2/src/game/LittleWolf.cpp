@@ -47,9 +47,10 @@ bool LittleWolf::checkCollisions(std::uint8_t id)
 		Point direction = lerp(camera, 0.5f);
 		direction.x = direction.x / mag(direction);
 		direction.y = direction.y / mag(direction);
-		std::cout << p.where.x  << " " << p.where.y << std::endl;
+	/*	std::cout << p.where.x << " " << p.where.y << std::endl;
 		std::cout << direction.x << " " << direction.y << std::endl;
 		std::cout << (int)_map.walling << std::endl;
+		*/
 		const Hit hit = cast(p.where, direction, _map.walling, false, true);
 		
 #ifdef _DEBUG
@@ -65,6 +66,7 @@ bool LittleWolf::checkCollisions(std::uint8_t id)
 			
 			uint8_t id = tile_to_player(hit.tile);
 			playSound(hit.where, 1);
+			
 
 			Game::Instance()->get_networking().send_sound(1, _players[_curr_player_id].where.x, _players[_curr_player_id].where.y);
 			
@@ -195,7 +197,7 @@ void LittleWolf::update() {
 	if (timerToRestart != 0 && sdlutils().currRealTime() > timerToRestart && beginTimerToRestart) {
 		Game::Instance()->get_networking().send_restart();
 		//RestartAll();
-
+		std::cout << "llamo al restart desde " << (int)_curr_player_id << std::endl;
 		timerToRestart = 0;
 		beginTimerToRestart = false;
 		return;
@@ -418,14 +420,17 @@ bool LittleWolf::addPlayer(std::uint8_t id, std::string& name) {
 void LittleWolf::playSound(Point where, Uint8 sound)
 {
 	float volume = mag(sub(where, _players[_curr_player_id].where));
-
+	if (volume < 0) volume = 0;
+	if (volume > 128) volume = 128;
 	if (sound == 0) {
 		auto playSound = &sdlutils().soundEffects().at("gunshot");
+
 		playSound->setVolume(volume);
 		playSound->play();
 	}
 	else {
 		auto playSound = &sdlutils().soundEffects().at("pain");
+
 		playSound->setVolume(volume);
 		playSound->play();
 	}
@@ -509,7 +514,6 @@ void LittleWolf::update_player_info(std::uint8_t id, float whereX, float whereY,
 		aux[i] = name[i];
 	}
 	Game::Instance()->chars_to_string(p.name, aux);
-	std::cout << "name updated: " << p.name << std::endl;
 	_map.walling[(int)p.where.y][(int)p.where.x] = 0;
 
 }

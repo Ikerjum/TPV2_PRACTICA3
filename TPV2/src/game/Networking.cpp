@@ -242,8 +242,11 @@ void Networking::send_shoot(Uint8 shooterId) {
 }
 
 void Networking::handle_shoot(const ShootMsg &m) {
+	
+	
+	
 	if (is_master()) {
-		
+		std::cout << "me rompo aqui xd";
 		Game::Instance()->get_littleWolf().checkCollisions(m._client_id);
 			
 	}
@@ -334,7 +337,7 @@ void Networking::send_health(Uint8 id, int distance, Uint8 shooterId)
 void Networking::handle_restart() { //Se comprueba si es el master antes de esto
 	
 	if(is_master())
-	std::cout << "llamo restart" << std::endl;
+	
 	Game::Instance()->get_littleWolf().RestartAll();
 	
 	Game::Instance()->get_littleWolf().setBeginTimerToRestart(false); //Necesario porque sino se ejecuta dos veces
@@ -369,9 +372,9 @@ void Networking::handle_player_correction(const PlayerCorrectionMsg& m)
 
 void Networking::handle_health(const HealthMsg& m)
 {
-	if (m._client_id != _clientId) {
+	if (m.shooter == _clientId) {
 		if (Game::Instance()->get_littleWolf().getDamage(m._client_id, 100 - m.distance)) {
-			std::cout << "muerte" << std::endl;
+		
 			send_points(m.shooter);
 			send_dead(m._client_id);
 		}
